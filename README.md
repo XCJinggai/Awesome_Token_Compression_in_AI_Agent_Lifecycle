@@ -109,6 +109,8 @@ Existing methods fall into four paradigms:
 
 #### ![](https://img.shields.io/badge/Transformation-eab308?style=flat-square) Transformation
 
+![Text Token Compression](figs/text_compression.png)
+
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/01-B31B1B?style=flat-square)](https://arxiv.org/abs/2601.10378)<br>[Global Context Compression with Interleaved Vision-Text Transformation](https://arxiv.org/abs/2601.10378)<br><sub>Jiao, Duan, Zhao et al.</sub> | 2026/01 | [arXiv](https://arxiv.org/abs/2601.10378) | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) |
@@ -183,6 +185,8 @@ Existing methods fall into four paradigms:
 | [![arXiv](https://img.shields.io/badge/arXiv-2023/11-B31B1B?style=flat-square)](https://arxiv.org/abs/2311.17043)<br>[LLaMA-VID: An Image is Worth 2 Tokens in Large Language Models](https://arxiv.org/abs/2311.17043)<br><sub>Li, Wang, Jia</sub> | 2023/11 | [arXiv](https://arxiv.org/abs/2311.17043) · [GitHub](https://github.com/dvlab-research/LLaMA-VID) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) |
 
 #### ![](https://img.shields.io/badge/Selection-ef4444?style=flat-square) Token Selection
+
+![Image Token Compression](figs/image_compression.png)
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
@@ -279,6 +283,8 @@ Existing methods fall into four paradigms:
 
 #### ![](https://img.shields.io/badge/Selection-ef4444?style=flat-square) Token Selection
 
+![Video Token Compression](figs/video_compression.png)
+
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/04-B31B1B?style=flat-square)](https://arxiv.org/abs/2604.01881)<br>[HieraVid: Hierarchical Token Pruning for Fast Video Large Language Models](https://arxiv.org/abs/2604.01881)<br><sub>Guo, Zhu, Ji et al.</sub> | 2026/04 | [arXiv](https://arxiv.org/abs/2604.01881) | ![Video](https://img.shields.io/badge/Video-dc2626?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
@@ -335,6 +341,8 @@ Existing methods fall into four paradigms:
 > Audio signals contain temporal and spectral redundancy, especially in silence and stationary patterns. Audio token compression spans codec tokenizer design for LALMs to post-tokenization compression methods.
 
 #### ![](https://img.shields.io/badge/Tokenizer-8b5cf6?style=flat-square) Tokenizer Design
+
+![Audio Token Compression](figs/audio_compression.png)
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
@@ -431,6 +439,8 @@ If injected without compression, these contexts increase inference cost and may 
 
 > Observations capture environment states, tool feedback, and interaction outcomes during agent execution. If appended without compression, they quickly expand the active context with noisy or repetitive content.
 
+![Observation Token Compression](figs/observation_compression.png)
+
 #### ![](https://img.shields.io/badge/Textual-64748b?style=flat-square) Textual Observation Token Compression
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
@@ -454,6 +464,8 @@ If injected without compression, these contexts increase inference cost and may 
 ### 🔍 Retrieval Token Compression
 
 > Retrieved evidence in RAG systems is often redundant, overlapping, or weakly relevant. Retrieval compression covers both post-retrieval evidence trimming and pre-retrieval corpus organization.
+
+![Retrieval Token Compression](figs/retrieval_compression.png)
 
 #### ![](https://img.shields.io/badge/Post--retrieval-f43f5e?style=flat-square) Post-retrieval Compression
 
@@ -489,6 +501,8 @@ If injected without compression, these contexts increase inference cost and may 
 ### 🧩 Memory Token Compression
 
 > Agents cannot maintain persistent memory within a fixed context window. Memory compression manages how historical traces are formed, retrieved, and maintained across long-horizon multi-step workflows.
+
+![Memory Token Compression](figs/memory_compression.png)
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
