@@ -38,26 +38,44 @@
 ![Teaser](figs/teaser.png)
 
 Transformer-based models have made **token sequences** a universal interface across modern AI systems.
-Early task-specific Transformers processed task inputs as tokens (subwords in BERT, patches in ViT).
-Large language models (LLMs) extended tokens to context and reasoning.
-Multimodal LLMs (MLLMs) further extended them to images, videos, and audio.
+Early task-specific Transformers processed task inputs as tokens — subwords in BERT, patch tokens in ViT.
+With the rise of LLMs, tokens were no longer limited to task inputs but became the basic units for organizing context and supporting reasoning.
+Multimodal LLMs (MLLMs) further extended the tokenized interface to perceptual signals,
+converting images, videos, and audio into tokens aligned with language representations.
 In AI agents, tokens now also represent **observations, retrieved evidence, and memory records**
-accumulated during multi-step execution — token explosion becomes a *context management* challenge.
+accumulated across multi-step execution.
 
-**Token compression** aims to preserve task-relevant information with fewer active tokens.
-It is distinct from model compression (no parameter changes) and efficient attention (no computation-pattern changes) —
-it directly reduces the number of active tokens fed to the model.
+**Token explosion has therefore become a context management challenge**, not merely a sequence-length problem.
+Excessive or noisy context increases inference cost and may obscure task-relevant information.
+Concretely, the problems manifest along three dimensions:
+
+- 🔺 **Inference cost** — longer active contexts mean higher FLOPs, memory bandwidth, and KV-cache pressure at every step.
+- 🔺 **Context window saturation** — as agents accumulate observations, retrieved passages, and memory records, the context window fills faster than task progress advances.
+- 🔺 **Attention noise** — irrelevant or redundant tokens compete for attention with task-critical signals, degrading model performance even when the window is not full (the *lost-in-the-middle* effect).
+
+**Token compression** addresses all three: it preserves task-relevant information with fewer active tokens,
+reducing cost at the source rather than by changing model parameters or attention patterns.
+It is distinct from *model compression* (pruning, quantization, distillation — no token change)
+and *efficient attention* (sparse/linear attention — changes computation pattern, not token count).
 
 ### Agent-Centric Taxonomy
 
 ![Taxonomy](figs/taxonomy.png)
 
-We formulate token compression as an **active context optimization problem** and divide it into two top-level categories:
+We take an **agent-centric view** and formulate token compression as an active context optimization problem.
+The active context at each agent step is:
 
-| Category | Operates on | Objective |
-|---|---|---|
-| 👁️ **Perception Compression** | Input-side perceptual tokens (text, image, video, audio) | Reduce perceptual token cost while preserving input information for downstream tasks |
-| 🧠 **Semantic Compression** | Workflow context tokens (observations, retrieval evidence, memory) | Preserve decision-relevant information across multi-step agent execution |
+```
+X = ⟨ System tokens, Query, Perceptual tokens P, Workflow context C ⟩
+```
+
+Token compression reduces |X| while maximizing task utility under context-window and budget constraints.
+This yields two top-level categories:
+
+| Category | Operates on | Source of Redundancy | Objective |
+|---|---|---|---|
+| 👁️ **Perception Compression** | Input-side perceptual tokens P (text, image, video, audio) | Intrinsic redundancy of raw inputs | Reduce perceptual token cost while preserving input information |
+| 🧠 **Semantic Compression** | Workflow context tokens C (observations, retrieval evidence, memory) | Redundancy induced by the workflow itself | Preserve decision-relevant information across multi-step execution |
 
 ## 🏷️ Tag Legend
 
