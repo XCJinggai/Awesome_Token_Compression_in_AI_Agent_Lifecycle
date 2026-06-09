@@ -84,28 +84,6 @@ dividing it into two top-level categories:
 | ![Retrieval](https://img.shields.io/badge/Retrieval-0891b2?style=flat-square) | 🔍 Retrieval Token Compression |
 | ![Memory](https://img.shields.io/badge/Memory-9333ea?style=flat-square) | 🧩 Memory Token Compression |
 
-**Method Paradigm** (perception)
-
-| Badge | Description |
-|---|---|
-| ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) | reduces token length via deterministic structural operations such as convolution, pooling, and stacking. |
-| ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) | explicitly retains high-utility tokens based on certain criteria. |
-| ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) | fuses related tokens by exploiting their commonalities to produce compact representative tokens. |
-| ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) | maps original tokens into a new compact set of information-dense token representations. |
-| ![Tokenizer](https://img.shields.io/badge/Tokenizer-8b5cf6?style=flat-square) | addresses compression directly at the codec/tokenizer design stage by controlling token rate and information density. |
-
-**Method Paradigm** (semantic)
-
-| Badge | Description |
-|---|---|
-| ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) | compresses textual observations — execution logs, terminal outputs, action-observation histories. |
-| ![Visual](https://img.shields.io/badge/Visual-10b981?style=flat-square) | compresses visual observations — GUI screenshots, interface states, environment images. |
-| ![Post-retrieval](https://img.shields.io/badge/Post--retrieval-f43f5e?style=flat-square) | reduces the token cost of retrieved passages/evidence before feeding them to the LLM. |
-| ![Pre-retrieval](https://img.shields.io/badge/Pre--retrieval-f97316?style=flat-square) | compresses or restructures the source corpus offline so retrieval returns denser units. |
-| ![Formation](https://img.shields.io/badge/Formation-f59e0b?style=flat-square) | transforms interaction histories into compact and reusable memory representations. |
-| ![Retrieval](https://img.shields.io/badge/Retrieval-06b6d4?style=flat-square) | selects which stored memories to inject into the active context. |
-| ![Management](https://img.shields.io/badge/Management-6366f1?style=flat-square) | updates, consolidates, and prunes the memory store to bound long-term memory growth. |
-
 ---
 
 ## 👁️ Perception Compression
@@ -436,6 +414,18 @@ Semantic compression addresses token growth driven by the agent workflow itself.
 Multi-round interaction introduces observations and action records.
 Retrieval modules add external evidence. Memory systems preserve historical traces.
 If injected without compression, these contexts increase inference cost and may introduce attention noise.
+
+**Method tags used in this section:**
+
+| Badge | Description |
+|---|---|
+| ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) | compresses textual observations — execution logs, terminal outputs, action-observation histories. |
+| ![Visual](https://img.shields.io/badge/Visual-10b981?style=flat-square) | compresses visual observations — GUI screenshots, interface states, environment images. |
+| ![Post-retrieval](https://img.shields.io/badge/Post--retrieval-f43f5e?style=flat-square) | reduces the token cost of retrieved passages/evidence before feeding them to the LLM. |
+| ![Pre-retrieval](https://img.shields.io/badge/Pre--retrieval-f97316?style=flat-square) | compresses or restructures the source corpus offline so retrieval returns denser units. |
+| ![Formation](https://img.shields.io/badge/Formation-f59e0b?style=flat-square) | transforms interaction histories into compact and reusable memory representations. |
+| ![Retrieval](https://img.shields.io/badge/Retrieval-06b6d4?style=flat-square) | selects which stored memories to inject into the active context. |
+| ![Management](https://img.shields.io/badge/Management-6366f1?style=flat-square) | updates, consolidates, and prunes the memory store to bound long-term memory growth. |
 
 ### 👀 Observation Token Compression
 
