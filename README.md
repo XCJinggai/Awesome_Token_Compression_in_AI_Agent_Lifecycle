@@ -62,15 +62,8 @@ and *efficient attention* (sparse/linear attention — changes computation patte
 
 ![Taxonomy](figs/taxonomy.png)
 
-We take an **agent-centric view** and formulate token compression as an active context optimization problem.
-The active context at each agent step is:
-
-```
-X = ⟨ System tokens, Query, Perceptual tokens P, Workflow context C ⟩
-```
-
-Token compression reduces |X| while maximizing task utility under context-window and budget constraints.
-This yields two top-level categories:
+We take an **agent-centric view** and formulate token compression as an active context optimization problem,
+dividing it into two top-level categories:
 
 | Category | Operates on | Source of Redundancy | Objective |
 |---|---|---|---|
