@@ -79,8 +79,17 @@ This yields two top-level categories:
 
 ## 🏷️ Tag Legend
 
-**Modality / Context** &nbsp; ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) ![Video](https://img.shields.io/badge/Video-dc2626?style=flat-square) ![Audio](https://img.shields.io/badge/Audio-d97706?style=flat-square) ![Observation](https://img.shields.io/badge/Observation-ea580c?style=flat-square) ![Retrieval](https://img.shields.io/badge/Retrieval-0891b2?style=flat-square) ![Memory](https://img.shields.io/badge/Memory-9333ea?style=flat-square)
+**Modality / Context**
 
+| Badge | Meaning |
+|---|---|
+| ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | 💬 Text |
+| ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | 🖼️ Image |
+| ![Video](https://img.shields.io/badge/Video-dc2626?style=flat-square) | 🎬 Video |
+| ![Audio](https://img.shields.io/badge/Audio-d97706?style=flat-square) | 🔊 Audio |
+| ![Observation](https://img.shields.io/badge/Observation-ea580c?style=flat-square) | 👀 Observation |
+| ![Retrieval](https://img.shields.io/badge/Retrieval-0891b2?style=flat-square) | 🔍 Retrieval |
+| ![Memory](https://img.shields.io/badge/Memory-9333ea?style=flat-square) | 🧩 Memory |
 
 **Method Paradigm** (perception)
 
