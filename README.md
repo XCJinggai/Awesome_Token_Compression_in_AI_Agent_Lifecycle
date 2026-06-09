@@ -88,11 +88,11 @@ dividing it into two top-level categories:
 
 | Badge | Description |
 |---|---|
-| ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) | reduces token length via structural operations (convolution, pooling, pixel unshuffle, stacking). |
-| ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) | explicitly retains high-utility tokens based on saliency, redundancy, diversity, or task relevance. |
-| ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) | fuses related tokens to produce compact representative tokens. |
-| ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) | maps original tokens into a new compact set of information-dense representations. |
-| ![Tokenizer](https://img.shields.io/badge/Tokenizer-8b5cf6?style=flat-square) | addresses compression at the codec/tokenizer design stage. |
+| ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) | reduces token length via deterministic structural operations such as convolution, pooling, and stacking. |
+| ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) | explicitly retains high-utility tokens based on certain criteria. |
+| ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) | fuses related tokens by exploiting their commonalities to produce compact representative tokens. |
+| ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) | maps original tokens into a new compact set of information-dense token representations. |
+| ![Tokenizer](https://img.shields.io/badge/Tokenizer-8b5cf6?style=flat-square) | addresses compression directly at the codec/tokenizer design stage by controlling token rate and information density. |
 
 **Method Paradigm** (semantic)
 
@@ -119,11 +119,11 @@ Existing methods fall into four paradigms:
 
 | Paradigm | Core Idea |
 |---|---|
-| ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) | reduces token length via structural operations (convolution, pooling, pixel unshuffle, stacking). |
-| ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) | explicitly retains high-utility tokens based on saliency, redundancy, diversity, or task relevance. |
-| ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) | fuses related tokens to produce compact representative tokens. |
-| ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) | maps original tokens into a new compact set of information-dense representations. |
-| ![Tokenizer](https://img.shields.io/badge/Tokenizer-8b5cf6?style=flat-square) | addresses compression at the codec/tokenizer design stage. |
+| ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) | reduces token length via deterministic structural operations such as convolution, pooling, and stacking. |
+| ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) | explicitly retains high-utility tokens based on certain criteria. |
+| ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) | fuses related tokens by exploiting their commonalities to produce compact representative tokens. |
+| ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) | maps original tokens into a new compact set of information-dense token representations. |
+| ![Tokenizer](https://img.shields.io/badge/Tokenizer-8b5cf6?style=flat-square) | addresses compression directly at the codec/tokenizer design stage by controlling token rate and information density. |
 
 ### 💬 Text Token Compression
 
