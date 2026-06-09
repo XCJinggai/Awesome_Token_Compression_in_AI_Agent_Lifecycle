@@ -22,14 +22,14 @@
 - [Introduction](#-introduction)
 - [Tag Legend](#-tag-legend)
 - [Perception Compression](#-perception-compression)
-  - [💬 Text (35)](#-text-token-compression)
-  - [🖼️ Image (75)](#-image-token-compression)
-  - [🎬 Video (44)](#-video-token-compression)
-  - [🔊 Audio (45)](#-audio-token-compression)
+  - [💬 Text](#-text-token-compression)
+  - [🖼️ Image](#-image-token-compression)
+  - [🎬 Video](#-video-token-compression)
+  - [🔊 Audio](#-audio-token-compression)
 - [Semantic Compression](#-semantic-compression)
-  - [👀 Observation (8)](#-observation-token-compression)
-  - [🔍 Retrieval (19)](#-retrieval-token-compression)
-  - [🧩 Memory (23)](#-memory-token-compression)
+  - [👀 Observation](#-observation-token-compression)
+  - [🔍 Retrieval](#-retrieval-token-compression)
+  - [🧩 Memory](#-memory-token-compression)
 - [Citation](#-citation)
 - [Star History](#-star-history)
 
@@ -99,7 +99,7 @@ We formulate token compression as an **active context optimization problem** and
 
 ## 👁️ Perception Compression
 
-> **199 papers** · 4 modalities · 4 paradigms
+> 4 modalities · 4 paradigms
 
 ![Perception Paradigms](figs/perception_paradigms.png)
 
@@ -419,7 +419,7 @@ Existing methods fall into four paradigms:
 
 ## 🧠 Semantic Compression
 
-> **50 papers** · 3 workflow context types
+> 3 workflow context types
 
 Semantic compression addresses token growth driven by the agent workflow itself.
 Multi-round interaction introduces observations and action records.
