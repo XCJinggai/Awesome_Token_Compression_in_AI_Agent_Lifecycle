@@ -541,7 +541,7 @@ If you find our paper or this repository helpful, please consider citing:
 ```bibtex
 @article{zhang2026tokencompressionagents,
   title   = {A Survey of Token Compression in the Era of AI Agents: From Perception to Semantics},
-  author  = {Zhang, Fengxi and Cheng, Zhengxue and Song, Li},
+  author  = {Zhang, Fengxi, Cheng, Zhengxue, Song, Li},
   year    = {2026},
 }
 ```
