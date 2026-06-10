@@ -1,4 +1,4 @@
-# Awesome Token Compression Papers
+# Awesome Token Compression in the Era of AI Agents: From Perception to Semantics
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 ![Papers](https://img.shields.io/badge/Papers-249-blue?style=flat-square)
