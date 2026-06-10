@@ -283,7 +283,7 @@ Existing methods fall into four paradigms:
 
 #### ![](https://img.shields.io/badge/Selection-ef4444?style=flat-square) Token Selection
 
-<img src="figs/video_compression.png" width="80%">
+<img src="figs/video_compression.png" width="100%">
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
