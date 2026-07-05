@@ -34,11 +34,33 @@
 
 ## 🚀 Introduction
 
-![Token Sources in the AI Agent Lifecycle](figs/agent_lifecycle_token_sources.png)
+```mermaid
+flowchart LR
+  U["User / Environment"] --> P["Current Perceptual Inputs<br/>Text · Image · Video · Audio"]
+  P --> FM["Foundation Model"]
+  FM --> H["Thoughts / Reasoning Traces"]
+  FM --> A["Actions / Tool Calls"]
+  A --> O["Observations / Feedback"]
+  R["Retrieval Evidence"] --> FM
+  M["Memory Records"] --> FM
+  H --> C["Accumulated Workflow Context"]
+  O --> C
+  R --> C
+  M --> C
+  C --> FM
+```
 
 Tokens serve as the fundamental interface through which foundation models represent inputs, maintain contexts, and support reasoning. In AI agents, tokens arise not only from current perceptual inputs, but also from workflow contexts accumulated across multi-step execution, including retrieval results, reasoning traces, action--observation histories, and memory records. Dense multimodal inputs and iterative workflow accumulation lead to token explosion, increasing inference cost and making active-context management critical for efficient and reliable agent execution.
 
-![Token Explosion in the AI Agent Lifecycle](figs/agent_lifecycle_token_explosion.png)
+```mermaid
+flowchart TD
+  A["Dense multimodal perceptual inputs"] --> X["Token Explosion"]
+  B["Iterative workflow accumulation"] --> X
+  X --> C["Higher token cost"]
+  X --> D["KV-cache usage and latency"]
+  X --> E["Attention dispersion and context degradation"]
+  X --> F["Reasoning errors, hallucinations, and task failure"]
+```
 
 Token explosion naturally emerges in AI agent workflows due to the continuous growth of active contexts. This phenomenon is driven by two coupled mechanisms: high-density multimodal perceptual inputs and iterative accumulation of workflow-generated tokens during multi-step interaction. Unlike static LLM settings, agent systems repeatedly expand the active context through retrieval, reasoning, tool use, and environment feedback, forming a long-horizon execution loop that continuously increases token consumption.
 
@@ -46,7 +68,24 @@ Token compression addresses this challenge by reducing the number of active toke
 
 ### Agent-Centric Taxonomy
 
-![Agent-Centric Taxonomy](figs/taxonomy.png)
+```mermaid
+flowchart TB
+  TC["Token Compression in the AI Agent Lifecycle"]
+  TC --> PC["Perception Compression<br/>current input-side tokens P"]
+  TC --> SC["Semantic Compression<br/>workflow context tokens C_t"]
+  PC --> Text["Text"]
+  PC --> Image["Image"]
+  PC --> Video["Video"]
+  PC --> Audio["Audio"]
+  PC --> T["Transformation"]
+  PC --> S["Token Selection"]
+  PC --> A["Token Aggregation"]
+  PC --> R["Token Resampling"]
+  SC --> Ret["Retrieval"]
+  SC --> Thought["Thought"]
+  SC --> AO["Action-Observation"]
+  SC --> Mem["Memory"]
+```
 
 Based on this workflow-oriented perspective, this survey divides token compression into two main categories: perception compression and semantic compression. Perception compression focuses on current input-side tokens derived from text and multimodal perceptual signals, including images, videos, and audio. Semantic compression focuses on workflow contexts introduced or accumulated during agent execution, including retrieval results, reasoning traces, action--observation histories, and memory records.
 
@@ -163,7 +202,16 @@ LLMs are limited by their context window and cannot maintain long-horizon memory
 
 The preceding sections review token compression from an agent-workflow perspective. Under this view, token compression is not only a technique for shortening input sequences. It is also part of active-context management during agent execution.
 
-![Future Directions](figs/future_directions.png)
+```mermaid
+flowchart LR
+  M["Method-level"] --> MM["Multimodal Token Compression"]
+  M --> AO["Agent-oriented Token Compression"]
+  E["Evaluation-level"] --> SB["Standardized Benchmarks"]
+  E --> UB["Unified Baselines and Metrics"]
+  D["Deployment-level"] --> KV["Joint Token and KV Cache Compression"]
+  D --> HW["Hardware-friendly Token Compression"]
+  D --> SV["Safe and Verifiable Token Compression"]
+```
 
 | Direction | Summary |
 |---|---|
