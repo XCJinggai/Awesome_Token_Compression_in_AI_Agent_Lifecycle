@@ -1,0 +1,154 @@
+name: Codex one-off README integration
+
+on:
+  push:
+    branches:
+      - codex/update-agent-lifecycle-survey
+
+permissions:
+  contents: write
+
+jobs:
+  integrate-readme:
+    if: ${{ !contains(github.event.head_commit.message, '[skip integrate-readme]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/update-agent-lifecycle-survey
+          fetch-depth: 0
+      - name: Integrate lifecycle survey into README
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          old = Path('README.md').read_text(encoding='utf-8')
+          draft = Path('README.agent-lifecycle.md').read_text(encoding='utf-8')
+
+          def section(text, start, end=None, offset=0):
+              s = text.index(start, offset)
+              e = text.index(end, s) if end else len(text)
+              return text[s:e]
+
+          def body_after_heading(block):
+              return block.split('\n', 1)[1].strip()
+
+          def first_tail(block, markers):
+              positions = [block.find(marker) for marker in markers]
+              positions = [pos for pos in positions if pos >= 0]
+              if not positions:
+                  raise ValueError('Expected marker not found in block')
+              return block[min(positions):]
+
+          def rebuild_modality(old_all, draft_all, heading, next_heading):
+              old_block = section(old_all, heading, next_heading)
+              draft_block = section(draft_all, heading, next_heading)
+              draft_intro = body_after_heading(draft_block)
+              old_tail = first_tail(old_block, ['#### ![]', '<img src='])
+              return heading + '\n\n' + draft_intro + '\n\n' + old_tail.strip() + '\n\n---\n\n'
+
+          new_prefix = draft[:draft.index('### 💬 Text Token Compression')].rstrip()
+
+          text_block = rebuild_modality(old, draft, '### 💬 Text Token Compression', '### 🖼️ Image Token Compression')
+          image_block = rebuild_modality(old, draft, '### 🖼️ Image Token Compression', '### 🎬 Video Token Compression')
+          video_block = rebuild_modality(old, draft, '### 🎬 Video Token Compression', '### 🔊 Audio Token Compression')
+          old_audio_block = section(old, '### 🔊 Audio Token Compression', '## 🧠 Semantic Compression')
+          draft_audio_block = section(draft, '### 🔊 Audio Token Compression', '## 🧠 Semantic Compression')
+          audio_intro = body_after_heading(draft_audio_block)
+          audio_tail = first_tail(old_audio_block, ['#### ![]', '<img src='])
+          audio_block = '### 🔊 Audio Token Compression\n\n' + audio_intro + '\n\n' + audio_tail.strip() + '\n\n---\n\n'
+
+          old_sem_start = old.index('## 🧠 Semantic Compression')
+          obs_start = old.index('### 👀 Observation Token Compression', old_sem_start)
+          ret_start = old.index('### 🔍 Retrieval Token Compression', old_sem_start)
+          mem_start = old.index('### 🧩 Memory Token Compression', old_sem_start)
+          citation_start = old.index('## 📌 Citation')
+
+          observation_block = old[obs_start:ret_start]
+          retrieval_block = old[ret_start:mem_start]
+          memory_block = old[mem_start:citation_start]
+
+          semantic_intro = section(draft, '## 🧠 Semantic Compression', '### 🔍 Retrieval Token Compression').strip()
+          retrieval_intro = section(draft, '### 🔍 Retrieval Token Compression', '### 🧠 Thought Token Compression').strip()
+          thought_block = section(draft, '### 🧠 Thought Token Compression', '### 🛠️ Action-Observation Token Compression').strip()
+          action_intro = section(draft, '### 🛠️ Action-Observation Token Compression', '### 🧩 Memory Token Compression').strip()
+          memory_intro = section(draft, '### 🧩 Memory Token Compression', '## 🔭 Challenges and Future Directions').strip()
+
+          semantic_tags = '''**Method tags used in this section:**
+
+| Badge | Description |
+|---|---|
+| ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) | compresses textual action-observation histories, execution logs, terminal outputs, and tool feedback. |
+| ![Visual](https://img.shields.io/badge/Visual-10b981?style=flat-square) | compresses visual observations such as GUI screenshots, interface states, and environment images. |
+| ![Post-retrieval](https://img.shields.io/badge/Post--retrieval-f43f5e?style=flat-square) | reduces the token cost of retrieved passages or evidence before feeding them to the LLM. |
+| ![Pre-retrieval](https://img.shields.io/badge/Pre--retrieval-f97316?style=flat-square) | compresses or restructures the source corpus offline so retrieval returns denser units. |
+| ![Formation](https://img.shields.io/badge/Formation-f59e0b?style=flat-square) | transforms interaction histories into compact and reusable memory representations. |
+| ![Retrieval](https://img.shields.io/badge/Retrieval-06b6d4?style=flat-square) | selects which stored memories to inject into the active context. |
+| ![Management](https://img.shields.io/badge/Management-6366f1?style=flat-square) | updates, consolidates, and prunes the memory store to bound long-term memory growth. |'''
+
+          retrieval_tail = first_tail(retrieval_block, [
+              '<img src="figs/retrieval_compression.png"',
+              '#### ![](https://img.shields.io/badge/Post--retrieval-f43f5e?style=flat-square) Post-retrieval Compression',
+          ]).strip()
+          observation_tail = first_tail(observation_block, [
+              '<img src="figs/observation_compression.png"',
+              '#### ![](https://img.shields.io/badge/Textual-64748b?style=flat-square) Textual Observation Token Compression',
+          ]).strip()
+          memory_tail = first_tail(memory_block, [
+              '<img src="figs/memory_compression.png"',
+              '| **Paper**',
+          ]).strip()
+
+          challenges_and_citation = draft[draft.index('## 🔭 Challenges and Future Directions'):].strip()
+          star_and_license = old[old.index('## ⭐ Star History'):].strip()
+
+          merged = (
+              new_prefix + '\n\n'
+              + text_block
+              + image_block
+              + video_block
+              + audio_block
+              + semantic_intro + '\n\n'
+              + semantic_tags + '\n\n'
+              + retrieval_intro + '\n\n'
+              + retrieval_tail + '\n\n---\n\n'
+              + thought_block + '\n\n---\n\n'
+              + action_intro + '\n\n'
+              + observation_tail + '\n\n---\n\n'
+              + memory_intro + '\n\n'
+              + memory_tail + '\n\n---\n\n'
+              + challenges_and_citation + '\n\n'
+              + star_and_license + '\n'
+          )
+
+          checks = [
+              '### 💬 Text Token Compression',
+              '### 🖼️ Image Token Compression',
+              '### 🎬 Video Token Compression',
+              '### 🔊 Audio Token Compression',
+              '### 🔍 Retrieval Token Compression',
+              '### 🧠 Thought Token Compression',
+              '### 🛠️ Action-Observation Token Compression',
+              '### 🧩 Memory Token Compression',
+              'Global Context Compression with Interleaved Vision-Text Transformation',
+              'A Self-Evolving Framework for Efficient Terminal Agents via Observational Context Compression',
+              'Omni-SimpleMem: Autoresearch-Guided Discovery of Lifelong Multimodal Agent Memory',
+          ]
+          missing = [item for item in checks if item not in merged]
+          if missing:
+              raise SystemExit('Missing expected README content: ' + ', '.join(missing))
+
+          Path('README.md').write_text(merged, encoding='utf-8')
+          PY
+      - name: Commit integrated README and remove temporary files
+        run: |
+          git config user.name "codex-app[bot]"
+          git config user.email "codex-app[bot]@users.noreply.github.com"
+          git add README.md
+          git rm --ignore-unmatch README.agent-lifecycle.md .github/workflows/codex-integrate-readme.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Integrate lifecycle taxonomy into README [skip integrate-readme]"
+          git push
