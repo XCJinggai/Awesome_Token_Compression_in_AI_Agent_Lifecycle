@@ -32,19 +32,19 @@
 
 ## 🚀 Introduction
 
-![Token Sources Expansion](figs/teaser.png)
+<p align="center"><img src="figs/teaser.png" alt="Token Sources Expansion" width="62%"></p>
 
 Tokens serve as the fundamental unit of information exchange, enabling foundation models to represent complex inputs and perform sophisticated reasoning across modern Transformer-based architectures. Their sources have expanded from static single-modality inputs in early task-specific models, to increasingly long textual contexts in LLMs, to multimodal perceptual inputs in MLLMs, and finally to the dynamic active context of AI agents. An agent processes current multimodal perceptual inputs while accumulating retrieved evidence, intermediate reasoning traces, action–observation histories, and memory records during execution.
 
 Token explosion is therefore a defining bottleneck in long-horizon multi-turn agent workflows. Repeated retrieval, reasoning, tool use, and environment feedback cause both active context length and cumulative token cost to grow across steps. Overextended sequences increase financial cost, KV-cache memory consumption, and inference latency. Excessive context can also distract the foundation model, weaken its use of task-relevant evidence, and increase the risk of task failure.
 
-![Token Explosion](figs/token_explosion.png)
+<p align="center"><img src="figs/token_explosion.png" alt="Token Explosion" width="75%"></p>
 
 Token compression directly combats token explosion by constructing a compact and task-relevant active context that retains the task goals, execution constraints, and state variables required for downstream inference. By reducing the token footprint at its source, it alleviates memory and latency overhead, minimizes attention distraction, and increases information density.
 
 ### Agent-Centric Taxonomy
 
-![Agent-Centric Taxonomy](figs/taxonomy.png)
+<p align="center"><img src="figs/taxonomy.png" alt="Agent-Centric Taxonomy" width="75%"></p>
 
 This survey organizes token compression according to where tokens enter the active context and how they function during execution. **Perception compression** targets current input-side tokens derived from user-provided text, images, video, and audio. **Semantic compression** targets workflow contexts introduced or accumulated through retrieval, reasoning, action-observation interaction, and memory. Perception compression is organized by compression mechanism, whereas semantic compression is organized by the major workflow components.
 
@@ -102,11 +102,9 @@ Transformation methods shorten perceptual token sequences by converting the inpu
 
 #### Connector-based Transformation
 
-<img src="figs/illustrations/transformation_connector.png" width="75%">
-
 At the tokenizer-to-LLM interface, continuous perceptual representations can be compressed before being mapped into the language-model embedding space. Connector-based transformation uses this interface not only for modality alignment, but also for token compression. The original feature sequence is shortened through projection, pooling, or reshaping, and the compressed representation is then mapped into the LLM input space.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023/12-B31B1B?style=flat-square)](https://arxiv.org/abs/2312.16886)<br>[MobileVLM : A Fast, Strong and Open Vision Language Assistant for Mobile Devices](https://arxiv.org/abs/2312.16886)<br><sub>Chu, Qiao, Lin et al.</sub> | 2023/12 | [arXiv](https://arxiv.org/abs/2312.16886) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023/12-B31B1B?style=flat-square)](https://arxiv.org/abs/2312.06742)<br>[Honeybee: Locality-enhanced Projector for Multimodal LLM](https://arxiv.org/abs/2312.06742)<br><sub>Cha, Kang, Mun et al.</sub> | 2023/12 | [arXiv](https://arxiv.org/abs/2312.06742) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) |
@@ -147,11 +145,9 @@ At the tokenizer-to-LLM interface, continuous perceptual representations can be 
 
 #### Summary-based Transformation
 
-<img src="figs/illustrations/transformation_summary.png" width="90%">
-
 Summary-based transformation reduces textual token length by converting long inputs into compact natural-language prompts. Unlike token selection, it does not preserve the original token sequence as a subset; instead, it changes the surface form of the input and generates a shorter representation intended to retain the information needed by the target LLM.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024/02-B31B1B?style=flat-square)](https://arxiv.org/abs/2402.18700)<br>[Learning to Compress Prompt in Natural Language Formats](https://arxiv.org/abs/2402.18700)<br><sub>Chuang, Xing, Chang et al.</sub> | 2024/02 | [arXiv](https://arxiv.org/abs/2402.18700) | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023/10-B31B1B?style=flat-square)](https://arxiv.org/abs/2310.04408)<br>[RECOMP: Improving Retrieval-Augmented LMs with Compression and Selective Augmentation](https://arxiv.org/abs/2310.04408)<br><sub>Xu, Shi, Choi</sub> | 2023/10 | [arXiv](https://arxiv.org/abs/2310.04408) | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) |
@@ -161,11 +157,9 @@ Summary-based transformation reduces textual token length by converting long inp
 
 #### Cross-modal Transformation
 
-<img src="figs/illustrations/transformation_cross_modal.png" width="90%">
-
 Cross-modal transformation reduces token length by converting the input into another modality with a more compact tokenization interface. Existing methods mainly explore this route for long textual contexts, where text is rendered into visual forms and then encoded as visual tokens.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024/06-B31B1B?style=flat-square)](https://arxiv.org/abs/2406.02547)<br>[Leveraging Visual Tokens for Extended Text Contexts in Multi-Modal Learning](https://arxiv.org/abs/2406.02547)<br><sub>Wang, Li, Lin et al.</sub> | 2024/06 | [arXiv](https://arxiv.org/abs/2406.02547) | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) ![Cross-Modal](https://img.shields.io/badge/Cross--Modal-db2777?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025/10-B31B1B?style=flat-square)](https://arxiv.org/abs/2510.18234)<br>[DeepSeek-OCR: Contexts Optical Compression](https://arxiv.org/abs/2510.18234)<br><sub>Wei, Sun, Li</sub> | 2025/10 | [arXiv](https://arxiv.org/abs/2510.18234) | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) ![Cross-Modal](https://img.shields.io/badge/Cross--Modal-db2777?style=flat-square) |
@@ -182,11 +176,9 @@ Token selection compresses perceptual token sequences by retaining useful tokens
 
 #### Saliency-based Selection
 
-<img src="figs/illustrations/selection_saliency.png" width="90%">
-
 Saliency-based selection treats token compression as an importance-ranking problem. It assigns each token a utility score according to its informativeness or influence on model computation, and retains tokens that are more likely to affect the final output.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![EMNLP](https://img.shields.io/badge/EMNLP-2023/12-4A90D9?style=flat-square)]()<br>[Compressing Context to Enhance Inference Efficiency of Large Language Models](https://aclanthology.org/2023.emnlp-main.391/)<br><sub>Li, Dong, Guerin et al.</sub> | 2023/12 | [Paper](https://aclanthology.org/2023.emnlp-main.391/) | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023/10-B31B1B?style=flat-square)](https://arxiv.org/abs/2310.05736)<br>[LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models](https://arxiv.org/abs/2310.05736)<br><sub>Jiang, Wu, Lin et al.</sub> | 2023/10 | [arXiv](https://arxiv.org/abs/2310.05736) | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
@@ -210,11 +202,9 @@ Saliency-based selection treats token compression as an importance-ranking probl
 
 #### Redundancy-based Selection
 
-<img src="figs/illustrations/selection_redundancy.png" width="90%">
-
 Redundancy-based selection removes tokens whose information is already covered by the retained context. Unlike saliency-based methods, which focus on individual importance, this route emphasizes marginal contribution.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024/10-B31B1B?style=flat-square)](https://arxiv.org/abs/2410.17247) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Cooperx521/PyramidDrop)<br>[PyramidDrop: Accelerating Your Large Vision-Language Models via Pyramid Visual Redundancy Reduction](https://arxiv.org/abs/2410.17247)<br><sub>Xing, Huang, Dong et al.</sub> | 2024/10 | [arXiv](https://arxiv.org/abs/2410.17247) · [GitHub](https://github.com/Cooperx521/PyramidDrop) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025/02-B31B1B?style=flat-square)](https://arxiv.org/abs/2502.11494)<br>[Stop Looking for Important Tokens in Multimodal Language Models: Duplication Matters More](https://arxiv.org/abs/2502.11494)<br><sub>Wen, Gao, Wang et al.</sub> | 2025/02 | [arXiv](https://arxiv.org/abs/2502.11494) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
@@ -239,11 +229,9 @@ Redundancy-based selection removes tokens whose information is already covered b
 
 #### Diversity-based Selection
 
-<img src="figs/illustrations/selection_diversity.png" width="90%">
-
 Diversity-based selection addresses a limitation of pure saliency ranking: highly scored tokens may concentrate on a few prominent regions while other useful evidence is removed. It therefore selects a compact subset whose tokens complement one another and provide broader coverage of the input.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025/10-B31B1B?style=flat-square)](https://arxiv.org/abs/2510.02912)<br>[Don't Just Chase "Highlighted Tokens" in MLLMs: Revisiting Visual Holistic Context Retention](https://arxiv.org/abs/2510.02912)<br><sub>Zou, Lu, Wang et al.</sub> | 2025/10 | [arXiv](https://arxiv.org/abs/2510.02912) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025/03-B31B1B?style=flat-square)](https://arxiv.org/abs/2503.18278)<br>[TopV: Compatible Token Pruning with Inference Time Optimization for Fast and Low-Memory Multimodal Vision Language Model](https://arxiv.org/abs/2503.18278)<br><sub>Yang, Sui, Xiao et al.</sub> | 2025/03 | [arXiv](https://arxiv.org/abs/2503.18278) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) ![Cross-Modal](https://img.shields.io/badge/Cross--Modal-db2777?style=flat-square) |
@@ -260,11 +248,9 @@ Diversity-based selection addresses a limitation of pure saliency ranking: highl
 
 #### Task-adaptive Selection
 
-<img src="figs/illustrations/selection_task_adaptive.png" width="90%">
-
 Task-adaptive selection estimates token utility according to downstream task requirements rather than only input-side redundancy. This adaptivity can be introduced by conditioning selection on the current query or instruction, or by learning a selection policy optimized for task utility under a token budget.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023/10-B31B1B?style=flat-square)](https://arxiv.org/abs/2310.06839)<br>[LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression](https://arxiv.org/abs/2310.06839)<br><sub>Jiang, Wu, Luo et al.</sub> | 2023/10 | [arXiv](https://arxiv.org/abs/2310.06839) | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024/09-B31B1B?style=flat-square)](https://arxiv.org/abs/2409.01227)<br>[Prompt Compression with Context-Aware Sentence Encoding for Fast and Improved LLM Inference](https://arxiv.org/abs/2409.01227)<br><sub>Liskavets, Ushakov, Roy et al.</sub> | 2024/09 | [arXiv](https://arxiv.org/abs/2409.01227) | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
@@ -298,11 +284,9 @@ Token aggregation shortens perceptual token sequences by merging related tokens 
 
 #### Similarity-based Aggregation
 
-<img src="figs/illustrations/aggregation_similarity.png" width="75%">
-
 Similarity-based aggregation compresses token sequences by merging tokens that are close in feature space or strongly related within the perceptual sequence. Depending on whether the relation is defined directly between tokens or through higher-level temporal units, this route can be divided into token-level and structure-aware similarity aggregation.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2022/10-B31B1B?style=flat-square)](https://arxiv.org/abs/2210.09461) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/facebookresearch/ToMe)<br>[Token Merging: Your ViT But Faster](https://arxiv.org/abs/2210.09461)<br><sub>Bolya, Fu, Dai et al.</sub> | 2022/10 | [arXiv](https://arxiv.org/abs/2210.09461) · [GitHub](https://github.com/facebookresearch/ToMe) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025/04-B31B1B?style=flat-square)](https://arxiv.org/abs/2504.17040)<br>[DyMU: Dynamic Merging and Virtual Unmerging for Efficient VLMs](https://arxiv.org/abs/2504.17040)<br><sub>Wang, Purushwalkam, Xiong et al.</sub> | 2025/04 | [arXiv](https://arxiv.org/abs/2504.17040) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) |
@@ -331,11 +315,9 @@ Similarity-based aggregation compresses token sequences by merging tokens that a
 
 #### Selection-guided Aggregation
 
-<img src="figs/illustrations/aggregation_selection_guided.png" width="90%">
-
 Selection-guided aggregation combines token selection with token merging. These methods first identify important tokens and then compress the remaining information into retained tokens or a small compensation set.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024/12-B31B1B?style=flat-square)](https://arxiv.org/abs/2412.06263) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/hulianyuyy/iLLaVA)<br>[iLLaVA: An Image is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models](https://arxiv.org/abs/2412.06263)<br><sub>Hu, Gao, Shang et al.</sub> | 2024/12 | [arXiv](https://arxiv.org/abs/2412.06263) · [GitHub](https://github.com/hulianyuyy/iLLaVA) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025/05-B31B1B?style=flat-square)](https://arxiv.org/abs/2505.22654)<br>[VScan: Rethinking Visual Token Reduction for Efficient Large Vision-Language Models](https://arxiv.org/abs/2505.22654)<br><sub>Zhang, Ma, Fang et al.</sub> | 2025/05 | [arXiv](https://arxiv.org/abs/2505.22654) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) |
@@ -349,11 +331,9 @@ Selection-guided aggregation combines token selection with token merging. These 
 
 #### Task-adaptive Aggregation
 
-<img src="figs/illustrations/aggregation_task_adaptive.png" width="90%">
-
 Task-adaptive aggregation uses task-related or cross-modal signals to decide how tokens should be merged. It estimates which perceptual evidence is more relevant to the current instruction and aggregates less relevant or redundant information into compact representatives.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023/05-B31B1B?style=flat-square)](https://arxiv.org/abs/2305.17530)<br>[PuMer: Pruning and Merging Tokens for Efficient Vision Language Models](https://arxiv.org/abs/2305.17530)<br><sub>Cao, Paranjape, Hajishirzi</sub> | 2023/05 | [arXiv](https://arxiv.org/abs/2305.17530) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) ![Joint-Modal](https://img.shields.io/badge/Joint--Modal-0ea5e9?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024/09-B31B1B?style=flat-square)](https://arxiv.org/abs/2409.10994)<br>[Less is More: A Simple yet Effective Token Reduction Method for Efficient Multi-modal LLMs](https://arxiv.org/abs/2409.10994)<br><sub>Song, Wang, Chen et al.</sub> | 2024/09 | [arXiv](https://arxiv.org/abs/2409.10994) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) |
@@ -370,11 +350,9 @@ Token resampling compresses perceptual sequences by replacing dense input repres
 
 #### Latent Resampling
 
-<img src="figs/illustrations/resampling_latent.png" width="90%">
-
 Latent resampling compresses dense sequences into compact continuous representations that function as soft memories of the original input. Compact tokens or states act as compressed carriers of contextual information.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![Findings of EMNLP](https://img.shields.io/badge/Findings_of_EMNLP-2022/12-4A90D9?style=flat-square)]()<br>[Prompt Compression and Contrastive Conditioning for Controllability and Toxicity Reduction in Language Models](https://aclanthology.org/2022.findings-emnlp.412)<br><sub>Wingate, Shoeybi, Sorensen</sub> | 2022/12 | [Paper](https://aclanthology.org/2022.findings-emnlp.412) | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) |
 | [![NeurIPS](https://img.shields.io/badge/NeurIPS-2023/12-4A90D9?style=flat-square)]()<br>Learning to Compress Prompts with Gist Tokens<br><sub>Mu, Li, Goodman</sub> | 2023/12 | - | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) |
@@ -393,11 +371,9 @@ Latent resampling compresses dense sequences into compact continuous representat
 
 #### Query-based Resampling
 
-<img src="figs/illustrations/resampling_query.png" width="90%">
-
 Query-based resampling uses learnable query tokens as compact information bottlenecks. These queries interact with dense features through cross-attention and produce a smaller set of resampled tokens.
 
-| **Paper** | **Date** | **Links** | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2022/04-B31B1B?style=flat-square)](https://arxiv.org/abs/2204.14198)<br>[Flamingo: a Visual Language Model for Few-Shot Learning](https://arxiv.org/abs/2204.14198)<br><sub>Alayrac, Donahue, Luc et al.</sub> | 2022/04 | [arXiv](https://arxiv.org/abs/2204.14198) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023/01-B31B1B?style=flat-square)](https://arxiv.org/abs/2301.12597)<br>[BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models](https://arxiv.org/abs/2301.12597)<br><sub>Li, Li, Savarese et al.</sub> | 2023/01 | [arXiv](https://arxiv.org/abs/2301.12597) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) |
@@ -441,9 +417,7 @@ During agent execution, the reasoning–action–observation loop continuously e
 
 #### ![](https://img.shields.io/badge/Post--retrieval-f43f5e?style=flat-square) Post-retrieval Compression
 
-<img src="figs/illustrations/retrieval_post.png" width="90%">
-
-| **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![WWW](https://img.shields.io/badge/WWW-2026-4A90D9?style=flat-square)]()<br>[Rethinking Soft Compression in Retrieval-Augmented Generation: A Query-Conditioned Selector Perspective](https://arxiv.org/abs/2602.15856)<br><sub>Liu, Jia, Gao et al.</sub> | 2026/02 | [arXiv](https://arxiv.org/abs/2602.15856) | ![Retrieval](https://img.shields.io/badge/Retrieval-0891b2?style=flat-square) | ![Post-retrieval](https://img.shields.io/badge/Post--retrieval-f43f5e?style=flat-square) |
 | [![ICLR](https://img.shields.io/badge/ICLR-2026-4A90D9?style=flat-square)]()<br>[OSCAR: Online Soft Compression And Reranking](https://arxiv.org/abs/2504.07109)<br><sub>Louis, Formal, Déjean et al.</sub> | 2026 | [arXiv](https://arxiv.org/abs/2504.07109) | ![Retrieval](https://img.shields.io/badge/Retrieval-0891b2?style=flat-square) | ![Post-retrieval](https://img.shields.io/badge/Post--retrieval-f43f5e?style=flat-square) |
@@ -465,9 +439,7 @@ During agent execution, the reasoning–action–observation loop continuously e
 
 #### ![](https://img.shields.io/badge/Pre--retrieval-f97316?style=flat-square) Pre-retrieval Compression
 
-<img src="figs/illustrations/retrieval_pre.png" width="90%">
-
-| **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![EMNLP](https://img.shields.io/badge/EMNLP-2025/11-4A90D9?style=flat-square)]()<br>[LightRAG: Simple and Fast Retrieval-Augmented Generation](https://aclanthology.org/2025.findings-emnlp.568/)<br><sub>Guo, Xia, Yu et al.</sub> | 2025/11 | [Paper](https://aclanthology.org/2025.findings-emnlp.568/) | ![Retrieval](https://img.shields.io/badge/Retrieval-0891b2?style=flat-square) | ![Pre-retrieval](https://img.shields.io/badge/Pre--retrieval-f97316?style=flat-square) |
 | [![ICML](https://img.shields.io/badge/ICML-2025/07-4A90D9?style=flat-square)]()<br>[From RAG to Memory: Non-Parametric Continual Learning for Large Language Models](https://proceedings.mlr.press/v267/gutierrez25a.html)<br><sub>Gutiérrez, Shu, Qi et al.</sub> | 2025/07 | [Paper](https://proceedings.mlr.press/v267/gutierrez25a.html) | ![Retrieval](https://img.shields.io/badge/Retrieval-0891b2?style=flat-square) | ![Pre-retrieval](https://img.shields.io/badge/Pre--retrieval-f97316?style=flat-square) |
@@ -486,9 +458,7 @@ During agent execution, the reasoning–action–observation loop continuously e
 
 #### ![](https://img.shields.io/badge/Transformation-eab308?style=flat-square) Thought Transformation
 
-<img src="figs/illustrations/thought_transformation.png" width="90%">
-
-| **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Context** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![ICML](https://img.shields.io/badge/ICML-2026-4A90D9?style=flat-square)]()<br>[ImgCoT: Compressing Long Chain of Thought into Compact Visual Tokens for Efficient Reasoning of Large Language Model](https://arxiv.org/abs/2601.22730)<br><sub>Chen, Zhou, Liang et al.</sub> | 2026/01 | [arXiv](https://arxiv.org/abs/2601.22730) | ![Thought](https://img.shields.io/badge/Thought-c2410c?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) ![Cross-Modal](https://img.shields.io/badge/Cross--Modal-db2777?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/01-B31B1B?style=flat-square)](https://arxiv.org/abs/2601.22069)<br>[VTC-R1: Vision-Text Compression for Efficient Long-Context Reasoning](https://arxiv.org/abs/2601.22069)<br><sub>Wang, Jing, Liu et al.</sub> | 2026/01 | [arXiv](https://arxiv.org/abs/2601.22069) | ![Thought](https://img.shields.io/badge/Thought-c2410c?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) ![Cross-Modal](https://img.shields.io/badge/Cross--Modal-db2777?style=flat-square) |
@@ -503,9 +473,7 @@ During agent execution, the reasoning–action–observation loop continuously e
 
 #### ![](https://img.shields.io/badge/Selection-ef4444?style=flat-square) Thought Selection
 
-<img src="figs/illustrations/thought_selection.png" width="90%">
-
-| **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Context** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![ICASSP](https://img.shields.io/badge/ICASSP-2026-4A90D9?style=flat-square)]()<br>[Long Chain-of-Thought Compression via Fine-Grained Group Policy Optimization](https://arxiv.org/abs/2602.10048)<br><sub>Han, Afifi, Marot et al.</sub> | 2026/02 | [arXiv](https://arxiv.org/abs/2602.10048) | ![Thought](https://img.shields.io/badge/Thought-c2410c?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
 | [![ICLR](https://img.shields.io/badge/ICLR-2026-4A90D9?style=flat-square)]()<br>[Making Slow Thinking Faster: Compressing LLM Chain-of-Thought via Step Entropy](https://openreview.net/forum?id=cGLqQfS5wH)<br><sub>Li, Zhong, Zheng et al.</sub> | 2026 | [OpenReview](https://openreview.net/forum?id=cGLqQfS5wH) | ![Thought](https://img.shields.io/badge/Thought-c2410c?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
@@ -517,9 +485,7 @@ During agent execution, the reasoning–action–observation loop continuously e
 
 #### ![](https://img.shields.io/badge/Re--encoding-7c3aed?style=flat-square) Thought Re-encoding
 
-<img src="figs/illustrations/thought_reencoding.png" width="90%">
-
-| **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Context** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/04-B31B1B?style=flat-square)](https://arxiv.org/abs/2604.22709)<br>[Thinking Without Words: Efficient Latent Reasoning with Abstract Chain-of-Thought](https://arxiv.org/abs/2604.22709)<br><sub>Ramji, Naseem, Fernandez Astudillo</sub> | 2026/04 | [arXiv](https://arxiv.org/abs/2604.22709) | ![Thought](https://img.shields.io/badge/Thought-c2410c?style=flat-square) | ![Re-encoding](https://img.shields.io/badge/Re--encoding-7c3aed?style=flat-square) |
 | [![NeurIPS](https://img.shields.io/badge/NeurIPS-2025-4A90D9?style=flat-square)]()<br>[SemCoT: Accelerating Chain-of-Thought Reasoning through Semantically-Aligned Implicit Tokens](https://arxiv.org/abs/2510.24940)<br><sub>He, Zheng, Zhu et al.</sub> | 2025/10 | [arXiv](https://arxiv.org/abs/2510.24940) | ![Thought](https://img.shields.io/badge/Thought-c2410c?style=flat-square) | ![Re-encoding](https://img.shields.io/badge/Re--encoding-7c3aed?style=flat-square) |
@@ -536,9 +502,7 @@ During agent execution, the reasoning–action–observation loop continuously e
 
 #### ![](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) Action-Interface Token Compression
 
-<img src="figs/illustrations/action_interface.png" width="90%">
-
-| **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Context** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/02-B31B1B?style=flat-square)](https://arxiv.org/abs/2602.14878)<br>[Model Context Protocol (MCP) Tool Descriptions Are Smelly! Towards Improving AI Agent Efficiency with Augmented MCP Tool Descriptions](https://arxiv.org/abs/2602.14878)<br><sub>Hasan, Li, Rajbahadur et al.</sub> | 2026/02 | [arXiv](https://arxiv.org/abs/2602.14878) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
 | [![Zenodo](https://img.shields.io/badge/Zenodo-2026-1682D4?style=flat-square)](https://zenodo.org/doi/10.5281/zenodo.19795759)<br>[TSCG Empirical Findings: 20,000+ API Call Tool-Schema Compression Benchmark](https://zenodo.org/doi/10.5281/zenodo.19795759)<br><sub>Sakizli</sub> | 2026 | [Dataset](https://zenodo.org/doi/10.5281/zenodo.19795759) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
@@ -548,9 +512,7 @@ During agent execution, the reasoning–action–observation loop continuously e
 
 #### ![](https://img.shields.io/badge/Textual-64748b?style=flat-square) Textual Observation Token Compression
 
-<img src="figs/illustrations/observation_textual.png" width="90%">
-
-| **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/05-B31B1B?style=flat-square)](https://arxiv.org/abs/2605.30785)<br>[Learning Agent-Compatible Context Management for Long-Horizon Tasks](https://arxiv.org/abs/2605.30785)<br><sub>Yi, Lei, Yao et al.</sub> | 2026/05 | [arXiv](https://arxiv.org/abs/2605.30785) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/04-B31B1B?style=flat-square)](https://arxiv.org/abs/2604.04979)<br>[Squeez: Task-Conditioned Tool-Output Pruning for Coding Agents](https://arxiv.org/abs/2604.04979)<br><sub>Kovács</sub> | 2026/04 | [arXiv](https://arxiv.org/abs/2604.04979) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) |
@@ -560,9 +522,7 @@ During agent execution, the reasoning–action–observation loop continuously e
 
 #### ![](https://img.shields.io/badge/Visual-10b981?style=flat-square) Visual Observation Token Compression
 
-<img src="figs/illustrations/observation_visual.png" width="90%">
-
-| **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/03-B31B1B?style=flat-square)](https://arxiv.org/abs/2603.26041)<br>[Rethinking Token Pruning for Historical Screenshots in GUI Visual Agents: Semantic, Spatial, and Temporal Perspectives](https://arxiv.org/abs/2603.26041)<br><sub>Li, Pan, Zhang et al.</sub> | 2026/03 | [arXiv](https://arxiv.org/abs/2603.26041) | ![Observation](https://img.shields.io/badge/Observation-ea580c?style=flat-square) | ![Visual](https://img.shields.io/badge/Visual-10b981?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/02-B31B1B?style=flat-square)](https://arxiv.org/abs/2602.23235)<br>[Spatio-Temporal Token Pruning for Efficient High-Resolution GUI Agents](https://arxiv.org/abs/2602.23235)<br><sub>Xu, Zhou, Wang et al.</sub> | 2026/02 | [arXiv](https://arxiv.org/abs/2602.23235) | ![Observation](https://img.shields.io/badge/Observation-ea580c?style=flat-square) | ![Visual](https://img.shields.io/badge/Visual-10b981?style=flat-square) |
@@ -576,19 +536,7 @@ During agent execution, the reasoning–action–observation loop continuously e
 
 > Memory token compression follows the formation–retrieval–management lifecycle: formation turns raw histories into compact memory units, retrieval controls which memories enter the active context, and management reduces redundancy in the memory store.
 
-#### Memory Formation
-
-<img src="figs/illustrations/memory_formation.png" width="90%">
-
-#### Memory Retrieval
-
-<img src="figs/illustrations/memory_retrieval.png" width="90%">
-
-#### Memory Management
-
-<img src="figs/illustrations/memory_management.png" width="90%">
-
-| **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
+| **Paper** | **Date** | **Links** | **Token Source** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/04-B31B1B?style=flat-square)](https://arxiv.org/abs/2604.01007) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/aiming-lab/SimpleMem)<br>[Omni-SimpleMem: Autoresearch-Guided Discovery of Lifelong Multimodal Agent Memory](https://arxiv.org/abs/2604.01007)<br><sub>Liu, Ling, Qiu et al.</sub> | 2026/04 | [arXiv](https://arxiv.org/abs/2604.01007) · [GitHub](https://github.com/aiming-lab/SimpleMem) | ![Memory](https://img.shields.io/badge/Memory-9333ea?style=flat-square) | ![Formation](https://img.shields.io/badge/Formation-f59e0b?style=flat-square) ![Retrieval](https://img.shields.io/badge/Retrieval-06b6d4?style=flat-square) ![Management](https://img.shields.io/badge/Management-6366f1?style=flat-square) ![Joint-Modal](https://img.shields.io/badge/Joint--Modal-0ea5e9?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/03-B31B1B?style=flat-square)](https://arxiv.org/abs/2603.13017)<br>[Structured Distillation for Personalized Agent Memory: 11x Token Reduction with Retrieval Preservation](https://arxiv.org/abs/2603.13017)<br><sub>Lewis</sub> | 2026/03 | [arXiv](https://arxiv.org/abs/2603.13017) | ![Memory](https://img.shields.io/badge/Memory-9333ea?style=flat-square) | ![Formation](https://img.shields.io/badge/Formation-f59e0b?style=flat-square) |
@@ -637,5 +585,4 @@ If you find our paper or this repository helpful, please consider citing:
 ## 📄 License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
 
