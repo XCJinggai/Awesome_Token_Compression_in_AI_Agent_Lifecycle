@@ -12,8 +12,33 @@
 
 ⭐ If you find this repository useful, please give it a star!
 
+## 📰 News
+
+- **2026** — We released the survey and this agent-centric collection of token compression research.
+
+## ✨ Highlights
+
+- **Comprehensive survey.** Reviews token compression across the full AI agent lifecycle, from perceptual inputs to retrieval, thought, action-observation, and memory contexts.
+- **Active-context formulation.** Frames compression as reducing token cost while preserving task utility under context-window and computation budgets.
+- **Unified taxonomy and outlook.** Organizes perception methods by compression mechanism and semantic methods by workflow component, then discusses methodology, evaluation, and deployment directions.
+
+## 💡 Motivation
+
+Token sources have expanded with the evolution from LLMs to MLLMs and AI agents. LLMs mainly process textual contexts, MLLMs add dense image, video, and audio inputs, and agents further accumulate retrieved evidence, reasoning traces, action-observation histories, and memory records during multi-step execution.
+
+<p align="center"><img src="figs/teaser.png" alt="Token Sources Expansion" width="62%"></p>
+
+In long-horizon tasks, dense perceptual inputs and repeated retrieval, reasoning, tool use, and environment feedback continuously enlarge the active context. This token explosion increases financial cost, KV-cache memory, and inference latency; excessive context can also distract the model from task-relevant evidence, degrade reasoning, and raise the risk of failure.
+
+<p align="center"><img src="figs/token_explosion.png" alt="Token Explosion" width="75%"></p>
+
+Token compression addresses this bottleneck by constructing a compact, task-relevant active context. The goal is not merely to shorten a sequence, but to preserve task goals, execution constraints, and state information while reducing computational overhead and contextual distraction.
+
 ## 📖 Table of Contents
 
+- [News](#-news)
+- [Highlights](#-highlights)
+- [Motivation](#-motivation)
 - [Introduction](#-introduction)
 - [Tag Legend](#-tag-legend)
 - [Perception Compression](#-perception-compression)
@@ -32,21 +57,11 @@
 
 ## 🚀 Introduction
 
-<p align="center"><img src="figs/teaser.png" alt="Token Sources Expansion" width="62%"></p>
-
-AI agents process multimodal inputs while accumulating retrieval, reasoning, action-observation, and memory tokens throughout execution.
-
-This continuous context growth increases cost, latency, memory use, and distraction from task-relevant evidence.
-
-<p align="center"><img src="figs/token_explosion.png" alt="Token Explosion" width="75%"></p>
-
-Token compression keeps the active context compact while preserving information required for the task.
-
 ### Agent-Centric Taxonomy
 
 <p align="center"><img src="figs/taxonomy.png" alt="Agent-Centric Taxonomy" width="75%"></p>
 
-The taxonomy separates input-side **perception compression** from workflow-side **semantic compression**.
+This survey follows where tokens enter and function in an agent's active context. **Perception compression** targets current text, image, video, and audio inputs, while **semantic compression** targets retrieval, reasoning, action-observation, and memory contexts accumulated during execution.
 
 | Category | Operates on | Source of Redundancy | Objective |
 |---|---|---|---|
@@ -82,7 +97,7 @@ Perception compression reduces redundant text, image, video, and audio tokens th
 
 Transformation shortens existing token representations through structural conversion.
 
-<details>
+<details open>
 <summary><strong>Connector-based Transformation</strong></summary>
 
 Compresses perceptual features before mapping them into the LLM embedding space.
@@ -128,7 +143,7 @@ Compresses perceptual features before mapping them into the LLM embedding space.
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Summary-based Transformation</strong></summary>
 
 Rewrites long text into shorter natural-language prompts.
@@ -143,7 +158,7 @@ Rewrites long text into shorter natural-language prompts.
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Cross-modal Transformation</strong></summary>
 
 Encodes content in another modality with a more compact token interface.
@@ -165,7 +180,7 @@ Encodes content in another modality with a more compact token interface.
 
 Token selection keeps high-utility tokens and removes the rest.
 
-<details>
+<details open>
 <summary><strong>Saliency-based Selection</strong></summary>
 
 Ranks tokens by estimated importance.
@@ -194,7 +209,7 @@ Ranks tokens by estimated importance.
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Redundancy-based Selection</strong></summary>
 
 Removes tokens already represented by the retained context.
@@ -224,7 +239,7 @@ Removes tokens already represented by the retained context.
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Diversity-based Selection</strong></summary>
 
 Keeps a compact subset with broad and complementary coverage.
@@ -246,7 +261,7 @@ Keeps a compact subset with broad and complementary coverage.
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Task-adaptive Selection</strong></summary>
 
 Selects tokens according to the current task or learned policy.
@@ -285,7 +300,7 @@ Selects tokens according to the current task or learned policy.
 
 Token aggregation merges related tokens into compact representatives.
 
-<details>
+<details open>
 <summary><strong>Similarity-based Aggregation</strong></summary>
 
 Merges tokens using feature or structural similarity.
@@ -319,7 +334,7 @@ Merges tokens using feature or structural similarity.
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Selection-guided Aggregation</strong></summary>
 
 Preserves selected tokens and merges the remaining information.
@@ -338,7 +353,7 @@ Preserves selected tokens and merges the remaining information.
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Task-adaptive Aggregation</strong></summary>
 
 Guides token merging with task or cross-modal signals.
@@ -360,7 +375,7 @@ Guides token merging with task or cross-modal signals.
 
 Token resampling replaces dense inputs with a newly constructed compact token set.
 
-<details>
+<details open>
 <summary><strong>Latent Resampling</strong></summary>
 
 Encodes dense sequences into compact continuous states.
@@ -384,7 +399,7 @@ Encodes dense sequences into compact continuous states.
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Query-based Resampling</strong></summary>
 
 Uses learnable queries to read out a compact token set.
@@ -418,7 +433,7 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 > Compresses external evidence before or after retrieval.
 
-<details>
+<details open>
 <summary><strong>Post-retrieval Compression</strong></summary>
 
 | **Paper** | **Date** | **Links** | **Token Source** | **Method** |
@@ -443,7 +458,7 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Pre-retrieval Compression</strong></summary>
 
 | **Paper** | **Date** | **Links** | **Token Source** | **Method** |
@@ -465,7 +480,7 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 > Reduces intermediate reasoning tokens while preserving task utility.
 
-<details>
+<details open>
 <summary><strong>Thought Transformation</strong></summary>
 
 | **Paper** | **Date** | **Links** | **Token Source** | **Method** |
@@ -483,7 +498,7 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Thought Selection</strong></summary>
 
 | **Paper** | **Date** | **Links** | **Token Source** | **Method** |
@@ -498,7 +513,7 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Thought Re-encoding</strong></summary>
 
 | **Paper** | **Date** | **Links** | **Token Source** | **Method** |
@@ -518,7 +533,7 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 > Compresses tool interfaces and runtime observations.
 
-<details>
+<details open>
 <summary><strong>Action-Interface Token Compression</strong></summary>
 
 | **Paper** | **Date** | **Links** | **Token Source** | **Method** |
@@ -531,7 +546,7 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Textual Observation Token Compression</strong></summary>
 
 | **Paper** | **Date** | **Links** | **Token Source** | **Method** |
@@ -544,7 +559,7 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 </details>
 
-<details>
+<details open>
 <summary><strong>Visual Observation Token Compression</strong></summary>
 
 | **Paper** | **Date** | **Links** | **Token Source** | **Method** |
@@ -563,7 +578,7 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 > Controls how memories are formed, retrieved, and maintained.
 
-<details>
+<details open>
 <summary><strong>Memory Methods</strong></summary>
 
 | **Paper** | **Date** | **Links** | **Token Source** | **Method** |
