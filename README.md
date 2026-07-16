@@ -102,7 +102,7 @@ Transformation shortens existing token representations through structural conver
 
 Compresses perceptual features before mapping them into the LLM embedding space.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023-B31B1B?style=flat-square)](https://arxiv.org/abs/2312.16886)<br>[MobileVLM : A Fast, Strong and Open Vision Language Assistant for Mobile Devices](https://arxiv.org/abs/2312.16886)<br><sub>Chu, Qiao, Lin et al.</sub> | 2023 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023-B31B1B?style=flat-square)](https://arxiv.org/abs/2312.06742)<br>[Honeybee: Locality-enhanced Projector for Multimodal LLM](https://arxiv.org/abs/2312.06742)<br><sub>Cha, Kang, Mun et al.</sub> | 2023 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) |
@@ -148,7 +148,7 @@ Compresses perceptual features before mapping them into the LLM embedding space.
 
 Rewrites long text into shorter natural-language prompts.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024-B31B1B?style=flat-square)](https://arxiv.org/abs/2402.18700)<br>[Learning to Compress Prompt in Natural Language Formats](https://arxiv.org/abs/2402.18700)<br><sub>Chuang, Xing, Chang et al.</sub> | 2024 | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023-B31B1B?style=flat-square)](https://arxiv.org/abs/2310.04408)<br>[RECOMP: Improving Retrieval-Augmented LMs with Compression and Selective Augmentation](https://arxiv.org/abs/2310.04408)<br><sub>Xu, Shi, Choi</sub> | 2023 | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) |
@@ -163,7 +163,7 @@ Rewrites long text into shorter natural-language prompts.
 
 Encodes content in another modality with a more compact token interface.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024-B31B1B?style=flat-square)](https://arxiv.org/abs/2406.02547)<br>[Leveraging Visual Tokens for Extended Text Contexts in Multi-Modal Learning](https://arxiv.org/abs/2406.02547)<br><sub>Wang, Li, Lin et al.</sub> | 2024 | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) ![Cross-Modal](https://img.shields.io/badge/Cross--Modal-db2777?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025-B31B1B?style=flat-square)](https://arxiv.org/abs/2510.18234)<br>[DeepSeek-OCR: Contexts Optical Compression](https://arxiv.org/abs/2510.18234)<br><sub>Wei, Sun, Li</sub> | 2025 | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) ![Cross-Modal](https://img.shields.io/badge/Cross--Modal-db2777?style=flat-square) |
@@ -185,7 +185,7 @@ Token selection keeps high-utility tokens and removes the rest.
 
 Ranks tokens by estimated importance.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![EMNLP](https://img.shields.io/badge/EMNLP-2023-4A90D9?style=flat-square)]()<br>[Compressing Context to Enhance Inference Efficiency of Large Language Models](https://aclanthology.org/2023.emnlp-main.391/)<br><sub>Li, Dong, Guerin et al.</sub> | 2023 | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023-B31B1B?style=flat-square)](https://arxiv.org/abs/2310.05736)<br>[LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models](https://arxiv.org/abs/2310.05736)<br><sub>Jiang, Wu, Lin et al.</sub> | 2023 | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
@@ -214,7 +214,7 @@ Ranks tokens by estimated importance.
 
 Removes tokens already represented by the retained context.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024-B31B1B?style=flat-square)](https://arxiv.org/abs/2410.17247) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Cooperx521/PyramidDrop)<br>[PyramidDrop: Accelerating Your Large Vision-Language Models via Pyramid Visual Redundancy Reduction](https://arxiv.org/abs/2410.17247)<br><sub>Xing, Huang, Dong et al.</sub> | 2024 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025-B31B1B?style=flat-square)](https://arxiv.org/abs/2502.11494)<br>[Stop Looking for Important Tokens in Multimodal Language Models: Duplication Matters More](https://arxiv.org/abs/2502.11494)<br><sub>Wen, Gao, Wang et al.</sub> | 2025 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
@@ -244,7 +244,7 @@ Removes tokens already represented by the retained context.
 
 Keeps a compact subset with broad and complementary coverage.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025-B31B1B?style=flat-square)](https://arxiv.org/abs/2510.02912)<br>[Don't Just Chase "Highlighted Tokens" in MLLMs: Revisiting Visual Holistic Context Retention](https://arxiv.org/abs/2510.02912)<br><sub>Zou, Lu, Wang et al.</sub> | 2025 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025-B31B1B?style=flat-square)](https://arxiv.org/abs/2503.18278)<br>[TopV: Compatible Token Pruning with Inference Time Optimization for Fast and Low-Memory Multimodal Vision Language Model](https://arxiv.org/abs/2503.18278)<br><sub>Yang, Sui, Xiao et al.</sub> | 2025 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) ![Cross-Modal](https://img.shields.io/badge/Cross--Modal-db2777?style=flat-square) |
@@ -266,7 +266,7 @@ Keeps a compact subset with broad and complementary coverage.
 
 Selects tokens according to the current task or learned policy.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023-B31B1B?style=flat-square)](https://arxiv.org/abs/2310.06839)<br>[LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression](https://arxiv.org/abs/2310.06839)<br><sub>Jiang, Wu, Luo et al.</sub> | 2023 | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024-B31B1B?style=flat-square)](https://arxiv.org/abs/2409.01227)<br>[Prompt Compression with Context-Aware Sentence Encoding for Fast and Improved LLM Inference](https://arxiv.org/abs/2409.01227)<br><sub>Liskavets, Ushakov, Roy et al.</sub> | 2024 | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
@@ -305,7 +305,7 @@ Token aggregation merges related tokens into compact representatives.
 
 Merges tokens using feature or structural similarity.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2022-B31B1B?style=flat-square)](https://arxiv.org/abs/2210.09461) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/facebookresearch/ToMe)<br>[Token Merging: Your ViT But Faster](https://arxiv.org/abs/2210.09461)<br><sub>Bolya, Fu, Dai et al.</sub> | 2022 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025-B31B1B?style=flat-square)](https://arxiv.org/abs/2504.17040)<br>[DyMU: Dynamic Merging and Virtual Unmerging for Efficient VLMs](https://arxiv.org/abs/2504.17040)<br><sub>Wang, Purushwalkam, Xiong et al.</sub> | 2025 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) |
@@ -339,7 +339,7 @@ Merges tokens using feature or structural similarity.
 
 Preserves selected tokens and merges the remaining information.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024-B31B1B?style=flat-square)](https://arxiv.org/abs/2412.06263) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/hulianyuyy/iLLaVA)<br>[iLLaVA: An Image is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models](https://arxiv.org/abs/2412.06263)<br><sub>Hu, Gao, Shang et al.</sub> | 2024 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025-B31B1B?style=flat-square)](https://arxiv.org/abs/2505.22654)<br>[VScan: Rethinking Visual Token Reduction for Efficient Large Vision-Language Models](https://arxiv.org/abs/2505.22654)<br><sub>Zhang, Ma, Fang et al.</sub> | 2025 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) |
@@ -358,7 +358,7 @@ Preserves selected tokens and merges the remaining information.
 
 Guides token merging with task or cross-modal signals.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023-B31B1B?style=flat-square)](https://arxiv.org/abs/2305.17530)<br>[PuMer: Pruning and Merging Tokens for Efficient Vision Language Models](https://arxiv.org/abs/2305.17530)<br><sub>Cao, Paranjape, Hajishirzi</sub> | 2023 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) ![Joint-Modal](https://img.shields.io/badge/Joint--Modal-0ea5e9?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2024-B31B1B?style=flat-square)](https://arxiv.org/abs/2409.10994)<br>[Less is More: A Simple yet Effective Token Reduction Method for Efficient Multi-modal LLMs](https://arxiv.org/abs/2409.10994)<br><sub>Song, Wang, Chen et al.</sub> | 2024 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) |
@@ -380,7 +380,7 @@ Token resampling replaces dense inputs with a newly constructed compact token se
 
 Encodes dense sequences into compact continuous states.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![Findings of EMNLP](https://img.shields.io/badge/Findings_of_EMNLP-2022-4A90D9?style=flat-square)]()<br>[Prompt Compression and Contrastive Conditioning for Controllability and Toxicity Reduction in Language Models](https://aclanthology.org/2022.findings-emnlp.412)<br><sub>Wingate, Shoeybi, Sorensen</sub> | 2022 | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) |
 | [![NeurIPS](https://img.shields.io/badge/NeurIPS-2023-4A90D9?style=flat-square)]()<br>Learning to Compress Prompts with Gist Tokens<br><sub>Mu, Li, Goodman</sub> | 2023 | ![Text](https://img.shields.io/badge/Text-6366f1?style=flat-square) | ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) |
@@ -404,7 +404,7 @@ Encodes dense sequences into compact continuous states.
 
 Uses learnable queries to read out a compact token set.
 
-| **Paper** | **Date** | **Token Source** | **Method** |
+| **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2022-B31B1B?style=flat-square)](https://arxiv.org/abs/2204.14198)<br>[Flamingo: a Visual Language Model for Few-Shot Learning](https://arxiv.org/abs/2204.14198)<br><sub>Alayrac, Donahue, Luc et al.</sub> | 2022 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2023-B31B1B?style=flat-square)](https://arxiv.org/abs/2301.12597)<br>[BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models](https://arxiv.org/abs/2301.12597)<br><sub>Li, Li, Savarese et al.</sub> | 2023 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) |
