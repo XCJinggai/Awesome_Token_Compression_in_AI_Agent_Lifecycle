@@ -30,7 +30,7 @@ Token sources have expanded with the evolution from LLMs to MLLMs and AI agents.
 
 In long-horizon tasks, dense perceptual inputs and repeated retrieval, reasoning, tool use, and environment feedback continuously enlarge the active context. This token explosion increases financial cost, KV-cache memory, and inference latency; excessive context can also distract the model from task-relevant evidence, degrade reasoning, and raise the risk of failure.
 
-<p align="center"><img src="figs/token_explosion.png" alt="Token Explosion" width="75%"></p>
+<p align="center"><img src="figs/token_explosion_upload.png" alt="Token Explosion" width="75%"></p>
 
 Token compression addresses this bottleneck by constructing a compact, task-relevant active context. The goal is not merely to shorten a sequence, but to preserve task goals, execution constraints, and state information while reducing computational overhead and contextual distraction.
 
