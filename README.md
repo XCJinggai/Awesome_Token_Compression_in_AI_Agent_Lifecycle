@@ -1,4 +1,4 @@
-# Awesome Token Compression in the Era of AI Agents: From Perception to Semantics
+# Token Compression in the AI Agent Lifecycle: A Comprehensive Survey from Perceptual Inputs to Semantic Contexts
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 ![Papers](https://img.shields.io/badge/Papers-274-blue?style=flat-square)
