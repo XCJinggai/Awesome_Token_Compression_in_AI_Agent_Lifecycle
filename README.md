@@ -86,7 +86,7 @@ dividing it into two top-level categories:
 | ![Observation](https://img.shields.io/badge/Observation-ea580c?style=flat-square) | 👀 Observation-side Token Compression |
 | ![Retrieval](https://img.shields.io/badge/Retrieval-0891b2?style=flat-square) | 🔍 Retrieval Token Compression |
 | ![Thought](https://img.shields.io/badge/Thought-c2410c?style=flat-square) | 💭 Thought Token Compression |
-| ![Action-Observation](https://img.shields.io/badge/Action--Observation-16a34a?style=flat-square) | 🛠️ Action-Observation Token Compression |
+| ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | 🛠️ Action-Observation Token Compression |
 | ![Memory](https://img.shields.io/badge/Memory-9333ea?style=flat-square) | 🧩 Memory Token Compression |
 | ![Cross-Modal](https://img.shields.io/badge/Cross--Modal-db2777?style=flat-square) | 🔀 Cross-modal compression (e.g., rendering text as images) |
 | ![Joint-Modal](https://img.shields.io/badge/Joint--Modal-0ea5e9?style=flat-square) | 🔗 Joint-modal compression (language-guided or multi-modal joint compression) |
@@ -110,13 +110,71 @@ Existing methods fall into four paradigms:
 | ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) | maps original tokens into a new compact set of information-dense token representations. |
 | ![Tokenizer](https://img.shields.io/badge/Tokenizer-8b5cf6?style=flat-square) | addresses compression directly at the codec/tokenizer design stage by controlling token rate and information density. |
 
+### Illustrations from the Survey Tables
+
+The following diagrams are the exact illustrations referenced by the updated survey tables.
+
+#### Transformation
+
+**Connector-based transformation**
+
+<img src="figs/illustrations/transformation_connector.png" width="75%">
+
+**Summary-based transformation**
+
+<img src="figs/illustrations/transformation_summary.png" width="90%">
+
+**Cross-modal transformation**
+
+<img src="figs/illustrations/transformation_cross_modal.png" width="90%">
+
+#### Selection
+
+**Saliency-based selection**
+
+<img src="figs/illustrations/selection_saliency.png" width="90%">
+
+**Redundancy-based selection**
+
+<img src="figs/illustrations/selection_redundancy.png" width="90%">
+
+**Diversity-based selection**
+
+<img src="figs/illustrations/selection_diversity.png" width="90%">
+
+**Task-adaptive selection**
+
+<img src="figs/illustrations/selection_task_adaptive.png" width="90%">
+
+#### Aggregation
+
+**Similarity- and structure-aware aggregation**
+
+<img src="figs/illustrations/aggregation_similarity.png" width="90%">
+
+**Selection-guided aggregation**
+
+<img src="figs/illustrations/aggregation_selection_guided.png" width="90%">
+
+**Task-adaptive aggregation**
+
+<img src="figs/illustrations/aggregation_task_adaptive.png" width="90%">
+
+#### Resampling
+
+**Latent resampling**
+
+<img src="figs/illustrations/resampling_latent.png" width="90%">
+
+**Query-based resampling**
+
+<img src="figs/illustrations/resampling_query.png" width="90%">
+
 ### 💬 Text Token Compression
 
 > Natural language contains substantial predictability and statistical redundancy. Text token compression reduces prompt and context length by removing context-level redundancy beyond what vocabulary-level subword tokenization handles.
 
 #### ![](https://img.shields.io/badge/Transformation-eab308?style=flat-square) Transformation
-
-<img src="figs/text_compression.png" width="80%">
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
@@ -193,8 +251,6 @@ Existing methods fall into four paradigms:
 | [![arXiv](https://img.shields.io/badge/arXiv-2023/11-B31B1B?style=flat-square)](https://arxiv.org/abs/2311.17043) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/dvlab-research/LLaMA-VID)<br>[LLaMA-VID: An Image is Worth 2 Tokens in Large Language Models](https://arxiv.org/abs/2311.17043)<br><sub>Li, Wang, Jia</sub> | 2023/11 | [arXiv](https://arxiv.org/abs/2311.17043) · [GitHub](https://github.com/dvlab-research/LLaMA-VID) | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) ![Joint-Modal](https://img.shields.io/badge/Joint--Modal-0ea5e9?style=flat-square) |
 
 #### ![](https://img.shields.io/badge/Selection-ef4444?style=flat-square) Token Selection
-
-<img src="figs/image_compression.png" width="80%">
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
@@ -291,8 +347,6 @@ Existing methods fall into four paradigms:
 
 #### ![](https://img.shields.io/badge/Selection-ef4444?style=flat-square) Token Selection
 
-<img src="figs/video_compression.png" width="100%">
-
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/04-B31B1B?style=flat-square)](https://arxiv.org/abs/2604.01881)<br>[HieraVid: Hierarchical Token Pruning for Fast Video Large Language Models](https://arxiv.org/abs/2604.01881)<br><sub>Guo, Zhu, Ji et al.</sub> | 2026/04 | [arXiv](https://arxiv.org/abs/2604.01881) | ![Video](https://img.shields.io/badge/Video-dc2626?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
@@ -349,8 +403,6 @@ Existing methods fall into four paradigms:
 > Audio signals contain temporal and spectral redundancy, especially in silence and stationary patterns. Audio token compression spans codec tokenizer design for LALMs to post-tokenization compression methods.
 
 #### ![](https://img.shields.io/badge/Tokenizer-8b5cf6?style=flat-square) Tokenizer Design
-
-<img src="figs/audio_compression.png" width="80%">
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
@@ -450,27 +502,31 @@ If injected without compression, these contexts increase inference cost and may 
 
 #### ![](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) Action-Interface Token Compression
 
+<img src="figs/illustrations/action_interface.png" width="90%">
+
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Context** | **Method** |
 | --- | :---: | --- | :---: | :---: |
-| [![arXiv](https://img.shields.io/badge/arXiv-2026/02-B31B1B?style=flat-square)](https://arxiv.org/abs/2602.14878)<br>[Model Context Protocol (MCP) Tool Descriptions Are Smelly! Towards Improving AI Agent Efficiency with Augmented MCP Tool Descriptions](https://arxiv.org/abs/2602.14878)<br><sub>Hasan, Li, Rajbahadur et al.</sub> | 2026/02 | [arXiv](https://arxiv.org/abs/2602.14878) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-16a34a?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
-| [![Zenodo](https://img.shields.io/badge/Zenodo-2026-1682D4?style=flat-square)](https://zenodo.org/doi/10.5281/zenodo.19795759)<br>[TSCG Empirical Findings: 20,000+ API Call Tool-Schema Compression Benchmark](https://zenodo.org/doi/10.5281/zenodo.19795759)<br><sub>Sakizli</sub> | 2026 | [Dataset](https://zenodo.org/doi/10.5281/zenodo.19795759) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-16a34a?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
-| [![NAACL](https://img.shields.io/badge/NAACL-2025-4A90D9?style=flat-square)]()<br>[EASYTOOL: Enhancing LLM-based Agents with Concise Tool Instruction](https://arxiv.org/abs/2401.06201)<br><sub>Yuan, Song, Chen et al.</sub> | 2025 | [arXiv](https://arxiv.org/abs/2401.06201) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-16a34a?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
-| [![ACL](https://img.shields.io/badge/ACL-2024-4A90D9?style=flat-square)]()<br>[Concise and Precise Context Compression for Tool-Using Language Models](https://aclanthology.org/2024.findings-acl.974/)<br><sub>Xu, Feng, Mu et al.</sub> | 2024 | [Paper](https://aclanthology.org/2024.findings-acl.974/) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-16a34a?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
-| [![EACL](https://img.shields.io/badge/EACL-2024/03-4A90D9?style=flat-square)]()<br>[Hierarchical and Dynamic Prompt Compression for Efficient Zero-shot API Usage](https://aclanthology.org/2024.findings-eacl.143/)<br><sub>Jiang, Vecchio, Bansal et al.</sub> | 2024/03 | [Paper](https://aclanthology.org/2024.findings-eacl.143/) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-16a34a?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
-
-<img src="figs/observation_compression.png" width="80%">
+| [![arXiv](https://img.shields.io/badge/arXiv-2026/02-B31B1B?style=flat-square)](https://arxiv.org/abs/2602.14878)<br>[Model Context Protocol (MCP) Tool Descriptions Are Smelly! Towards Improving AI Agent Efficiency with Augmented MCP Tool Descriptions](https://arxiv.org/abs/2602.14878)<br><sub>Hasan, Li, Rajbahadur et al.</sub> | 2026/02 | [arXiv](https://arxiv.org/abs/2602.14878) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
+| [![Zenodo](https://img.shields.io/badge/Zenodo-2026-1682D4?style=flat-square)](https://zenodo.org/doi/10.5281/zenodo.19795759)<br>[TSCG Empirical Findings: 20,000+ API Call Tool-Schema Compression Benchmark](https://zenodo.org/doi/10.5281/zenodo.19795759)<br><sub>Sakizli</sub> | 2026 | [Dataset](https://zenodo.org/doi/10.5281/zenodo.19795759) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
+| [![NAACL](https://img.shields.io/badge/NAACL-2025-4A90D9?style=flat-square)]()<br>[EASYTOOL: Enhancing LLM-based Agents with Concise Tool Instruction](https://arxiv.org/abs/2401.06201)<br><sub>Yuan, Song, Chen et al.</sub> | 2025 | [arXiv](https://arxiv.org/abs/2401.06201) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
+| [![ACL](https://img.shields.io/badge/ACL-2024-4A90D9?style=flat-square)]()<br>[Concise and Precise Context Compression for Tool-Using Language Models](https://aclanthology.org/2024.findings-acl.974/)<br><sub>Xu, Feng, Mu et al.</sub> | 2024 | [Paper](https://aclanthology.org/2024.findings-acl.974/) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
+| [![EACL](https://img.shields.io/badge/EACL-2024/03-4A90D9?style=flat-square)]()<br>[Hierarchical and Dynamic Prompt Compression for Efficient Zero-shot API Usage](https://aclanthology.org/2024.findings-eacl.143/)<br><sub>Jiang, Vecchio, Bansal et al.</sub> | 2024/03 | [Paper](https://aclanthology.org/2024.findings-eacl.143/) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | ![Action-Interface](https://img.shields.io/badge/Action--Interface-0f766e?style=flat-square) |
 
 #### ![](https://img.shields.io/badge/Textual-64748b?style=flat-square) Textual Observation Token Compression
 
+<img src="figs/illustrations/observation_textual.png" width="90%">
+
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
-| [![arXiv](https://img.shields.io/badge/arXiv-2026/05-B31B1B?style=flat-square)](https://arxiv.org/abs/2605.30785)<br>[Learning Agent-Compatible Context Management for Long-Horizon Tasks](https://arxiv.org/abs/2605.30785)<br><sub>Yi, Lei, Yao et al.</sub> | 2026/05 | [arXiv](https://arxiv.org/abs/2605.30785) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-16a34a?style=flat-square) | ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) |
-| [![arXiv](https://img.shields.io/badge/arXiv-2026/04-B31B1B?style=flat-square)](https://arxiv.org/abs/2604.04979)<br>[Squeez: Task-Conditioned Tool-Output Pruning for Coding Agents](https://arxiv.org/abs/2604.04979)<br><sub>Kovács</sub> | 2026/04 | [arXiv](https://arxiv.org/abs/2604.04979) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-16a34a?style=flat-square) | ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) |
+| [![arXiv](https://img.shields.io/badge/arXiv-2026/05-B31B1B?style=flat-square)](https://arxiv.org/abs/2605.30785)<br>[Learning Agent-Compatible Context Management for Long-Horizon Tasks](https://arxiv.org/abs/2605.30785)<br><sub>Yi, Lei, Yao et al.</sub> | 2026/05 | [arXiv](https://arxiv.org/abs/2605.30785) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) |
+| [![arXiv](https://img.shields.io/badge/arXiv-2026/04-B31B1B?style=flat-square)](https://arxiv.org/abs/2604.04979)<br>[Squeez: Task-Conditioned Tool-Output Pruning for Coding Agents](https://arxiv.org/abs/2604.04979)<br><sub>Kovács</sub> | 2026/04 | [arXiv](https://arxiv.org/abs/2604.04979) | ![Action-Observation](https://img.shields.io/badge/Action--Observation-ea580c?style=flat-square) | ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2026/04-B31B1B?style=flat-square)](https://arxiv.org/abs/2604.19572)<br>[A Self-Evolving Framework for Efficient Terminal Agents via Observational Context Compression](https://arxiv.org/abs/2604.19572)<br><sub>Ren, Wu, Li et al.</sub> | 2026/04 | [arXiv](https://arxiv.org/abs/2604.19572) | ![Observation](https://img.shields.io/badge/Observation-ea580c?style=flat-square) | ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025/10-B31B1B?style=flat-square)](https://arxiv.org/abs/2510.00446) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/YerbaPage/LongCodeZip)<br>[LongCodeZip: Compress Long Context for Code Language Models](https://arxiv.org/abs/2510.00446)<br><sub>Shi, Qian, Zhang et al.</sub> | 2025/10 | [arXiv](https://arxiv.org/abs/2510.00446) · [GitHub](https://github.com/YerbaPage/LongCodeZip) | ![Observation](https://img.shields.io/badge/Observation-ea580c?style=flat-square) | ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) |
 | [![arXiv](https://img.shields.io/badge/arXiv-2025/10-B31B1B?style=flat-square)](https://arxiv.org/abs/2510.00615) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/microsoft/acon)<br>[ACON: Optimizing Context Compression for Long-horizon LLM Agents](https://arxiv.org/abs/2510.00615)<br><sub>Kang, Chen, Han et al.</sub> | 2025/10 | [arXiv](https://arxiv.org/abs/2510.00615) · [GitHub](https://github.com/microsoft/acon) | ![Observation](https://img.shields.io/badge/Observation-ea580c?style=flat-square) | ![Textual](https://img.shields.io/badge/Textual-64748b?style=flat-square) |
 
 #### ![](https://img.shields.io/badge/Visual-10b981?style=flat-square) Visual Observation Token Compression
+
+<img src="figs/illustrations/observation_visual.png" width="90%">
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
@@ -486,9 +542,9 @@ If injected without compression, these contexts increase inference cost and may 
 
 > Retrieved evidence in RAG systems is often redundant, overlapping, or weakly relevant. Retrieval compression covers both post-retrieval evidence trimming and pre-retrieval corpus organization.
 
-<img src="figs/retrieval_compression.png" width="80%">
-
 #### ![](https://img.shields.io/badge/Post--retrieval-f43f5e?style=flat-square) Post-retrieval Compression
+
+<img src="figs/illustrations/retrieval_post.png" width="90%">
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
@@ -512,6 +568,8 @@ If injected without compression, these contexts increase inference cost and may 
 
 #### ![](https://img.shields.io/badge/Pre--retrieval-f97316?style=flat-square) Pre-retrieval Compression
 
+<img src="figs/illustrations/retrieval_pre.png" width="90%">
+
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![EMNLP](https://img.shields.io/badge/EMNLP-2025/11-4A90D9?style=flat-square)]()<br>[LightRAG: Simple and Fast Retrieval-Augmented Generation](https://aclanthology.org/2025.findings-emnlp.568/)<br><sub>Guo, Xia, Yu et al.</sub> | 2025/11 | [Paper](https://aclanthology.org/2025.findings-emnlp.568/) | ![Retrieval](https://img.shields.io/badge/Retrieval-0891b2?style=flat-square) | ![Pre-retrieval](https://img.shields.io/badge/Pre--retrieval-f97316?style=flat-square) |
@@ -531,6 +589,8 @@ If injected without compression, these contexts increase inference cost and may 
 
 #### ![](https://img.shields.io/badge/Transformation-eab308?style=flat-square) Thought Transformation
 
+<img src="figs/illustrations/thought_transformation.png" width="90%">
+
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Context** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![ICML](https://img.shields.io/badge/ICML-2026-4A90D9?style=flat-square)]()<br>[ImgCoT: Compressing Long Chain of Thought into Compact Visual Tokens for Efficient Reasoning of Large Language Model](https://arxiv.org/abs/2601.22730)<br><sub>Chen, Zhou, Liang et al.</sub> | 2026/01 | [arXiv](https://arxiv.org/abs/2601.22730) | ![Thought](https://img.shields.io/badge/Thought-c2410c?style=flat-square) | ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) ![Cross-Modal](https://img.shields.io/badge/Cross--Modal-db2777?style=flat-square) |
@@ -546,6 +606,8 @@ If injected without compression, these contexts increase inference cost and may 
 
 #### ![](https://img.shields.io/badge/Selection-ef4444?style=flat-square) Thought Selection
 
+<img src="figs/illustrations/thought_selection.png" width="90%">
+
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Context** | **Method** |
 | --- | :---: | --- | :---: | :---: |
 | [![ICASSP](https://img.shields.io/badge/ICASSP-2026-4A90D9?style=flat-square)]()<br>[Long Chain-of-Thought Compression via Fine-Grained Group Policy Optimization](https://arxiv.org/abs/2602.10048)<br><sub>Han, Afifi, Marot et al.</sub> | 2026/02 | [arXiv](https://arxiv.org/abs/2602.10048) | ![Thought](https://img.shields.io/badge/Thought-c2410c?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
@@ -557,6 +619,8 @@ If injected without compression, these contexts increase inference cost and may 
 | [![arXiv](https://img.shields.io/badge/arXiv-2025/05-B31B1B?style=flat-square)](https://arxiv.org/abs/2505.16838)<br>[R1-Compress: Long Chain-of-Thought Compression via Chunk Compression and Search](https://arxiv.org/abs/2505.16838)<br><sub>Wang, Shen, Yao et al.</sub> | 2025/05 | [arXiv](https://arxiv.org/abs/2505.16838) | ![Thought](https://img.shields.io/badge/Thought-c2410c?style=flat-square) | ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) |
 
 #### ![](https://img.shields.io/badge/Re--encoding-7c3aed?style=flat-square) Thought Re-encoding
+
+<img src="figs/illustrations/thought_reencoding.png" width="90%">
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Context** | **Method** |
 | --- | :---: | --- | :---: | :---: |
@@ -573,7 +637,17 @@ If injected without compression, these contexts increase inference cost and may 
 
 > Agents cannot maintain persistent memory within a fixed context window. Memory compression manages how historical traces are formed, retrieved, and maintained across long-horizon multi-step workflows.
 
-<img src="figs/memory_compression.png" width="80%">
+**Memory Formation**
+
+<img src="figs/illustrations/memory_formation.png" width="90%">
+
+**Memory Retrieval**
+
+<img src="figs/illustrations/memory_retrieval.png" width="90%">
+
+**Memory Management**
+
+<img src="figs/illustrations/memory_management.png" width="90%">
 
 | **Paper**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Date** | **Links**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Modality** | **Method** |
 | --- | :---: | --- | :---: | :---: |
@@ -624,3 +698,4 @@ If you find our paper or this repository helpful, please consider citing:
 ## 📄 License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
