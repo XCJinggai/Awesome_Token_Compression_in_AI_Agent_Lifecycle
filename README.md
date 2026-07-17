@@ -6,7 +6,7 @@
   <a href="https://github.com/XCJinggai/Awesome_Token_Compression_in_AI_Agent_Lifecycle/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome"></a>
 </p>
 
-> A collection of papers accompanying the survey
+> This repository provides a paper list organized according to the taxonomy presented in the survey
 > **"Token Compression in the AI Agent Lifecycle: A Comprehensive Survey from Perceptual Inputs to Semantic Contexts"**
 > by *Fengxi Zhang · Zhengxue Cheng · Guo Lu · Li Song · Zhu Li · Zhiyong Chen · Meixia Tao · Wenjun Zhang*.
 
