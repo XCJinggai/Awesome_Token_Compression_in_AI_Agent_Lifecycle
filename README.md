@@ -20,9 +20,9 @@
 
 ## ✨ Highlights
 
-- **Comprehensive survey.** Reviews token compression across the full AI agent lifecycle, from perceptual inputs to retrieval, thought, action-observation, and memory contexts.
-- **Active-context formulation.** Frames compression as reducing token cost while preserving task utility under context-window and computation budgets.
-- **Unified taxonomy and outlook.** Organizes perception methods by compression mechanism and semantic methods by workflow component, then discusses methodology, evaluation, and deployment directions.
+- **Agent-lifecycle organization.** Organizes token compression methods by where tokens enter or accumulate during agent execution, spanning perceptual inputs and workflow-generated semantic contexts.
+- **Mechanism-based perception taxonomy.** Groups perception compression into transformation, token selection, token aggregation, and token resampling, without separating methods by modality.
+- **Workflow-based semantic taxonomy.** Groups semantic compression by retrieval, thought, action-observation, and memory, reflecting the major contexts produced during agent execution.
 
 ## 💡 Motivation
 
