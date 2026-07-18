@@ -14,16 +14,6 @@
 
 ⭐ If you find this repository useful, please give it a star!
 
-## 📰 News
-
-- **2026** — We released the survey and this agent-centric collection of token compression research.
-
-## ✨ Highlights
-
-- **Agent-lifecycle organization.** Organizes token compression methods by where tokens enter or accumulate during agent execution, spanning perceptual inputs and workflow-generated semantic contexts.
-- **Mechanism-based perception taxonomy.** Groups perception compression into transformation, token selection, token aggregation, and token resampling, without separating methods by modality.
-- **Workflow-based semantic taxonomy.** Groups semantic compression by retrieval, thought, action-observation, and memory, reflecting the major contexts produced during agent execution.
-
 ## 💡 Motivation
 
 Token sources have expanded with the evolution from LLMs to MLLMs and AI agents. LLMs mainly process textual contexts, MLLMs add dense image, video, and audio inputs, and agents further accumulate retrieved evidence, reasoning traces, action-observation histories, and memory records during multi-step execution.
@@ -36,13 +26,12 @@ In long-horizon tasks, dense perceptual inputs and repeated retrieval, reasoning
 
 Token compression addresses this bottleneck by constructing a compact, task-relevant active context. The goal is not merely to shorten a sequence, but to preserve task goals, execution constraints, and state information while reducing computational overhead and contextual distraction.
 
+This repository is built around an open-source paper list. It prioritizes discoverability, a consistent taxonomy, accurate paper and code links, and community-maintained updates rather than reproducing the full survey manuscript.
+
 ## 📖 Table of Contents
 
-- [News](#-news)
-- [Highlights](#-highlights)
 - [Motivation](#-motivation)
-- [Introduction](#-introduction)
-- [Problem Formulation](#-problem-formulation)
+- [Paper List](#-paper-list)
 - [Tag Legend](#-tag-legend)
 - [Perception Compression](#-perception-compression)
   - [Transformation](#-transformation)
@@ -54,50 +43,18 @@ Token compression addresses this bottleneck by constructing a compact, task-rele
   - [Thought](#-thought-token-compression)
   - [Action-Observation](#-action-observation-token-compression)
   - [Memory](#-memory-token-compression)
-- [Discussion](#-discussion)
-  - [Application Scenarios](#-application-scenarios)
-  - [Challenges and Future Directions](#-challenges-and-future-directions)
 - [Citation](#-citation)
 - [Acknowledgements](#-acknowledgements)
 - [Contact](#-contact)
 
-## 🚀 Introduction
+## 📚 Paper List
 
-Tokens are the fundamental interactive units through which foundation models represent inputs, maintain contexts, and support reasoning. The AI agent lifecycle unifies the token paradigms of LLMs and MLLMs: an agent processes current perceptual inputs while accumulating heterogeneous workflow tokens introduced during execution, including retrieved evidence, intermediate reasoning traces, action-observation histories, and memory records. Repeated execution makes both the active context and cumulative token cost grow rapidly, giving rise to token explosion.
-
-### Agent-Centric Taxonomy
-
-<p align="center"><img src="figs/taxonomy.png" alt="Agent-Centric Taxonomy" width="75%"></p>
-
-This survey follows where tokens enter and function in an agent's active context. **Perception compression** targets current text, image, video, and audio inputs, while **semantic compression** targets retrieval, reasoning, action-observation, and memory contexts accumulated during execution.
+The list follows an agent-centric taxonomy based on where tokens enter or accumulate during execution. Perception compression covers current text, image, video, and audio inputs. Semantic compression covers workflow contexts introduced or accumulated by retrieval, thought, action-observation, and memory.
 
 | Category | Operates on | Source of Redundancy | Objective |
 |---|---|---|---|
 | 👁️ **Perception Compression** | Current input-side perceptual tokens | Representation-level redundancy in raw inputs | Reduce perceptual token cost while preserving task-relevant input information |
-| 🧠 **Semantic Compression** | Workflow context tokens C_t accumulated during agent execution | Redundancy induced by retrieval, reasoning, tool interaction, observations, and memory | Preserve decision-relevant information with fewer active tokens |
-
-<p align="center"><img src="figs/organization.png" alt="Survey organization" width="72%"></p>
-
-The survey is organized around the AI agent lifecycle: problem formulation, perception compression, semantic compression, and discussion of representative scenarios, challenges, and future directions.
-
-## 🧮 Problem Formulation
-
-At step t, the active context provided to the foundation model can be decomposed as:
-
-```
-X_t = <S, Q, P, C_t>
-```
-
-Here, S denotes system tokens, Q denotes the user query or instruction, P denotes perceptual tokens encoded from the current multimodal input, and C_t denotes the workflow context accumulated at step t.
-
-Token compression seeks a function f that reduces the active context while preserving task utility under execution-cost, context-window, and deployment constraints:
-
-```
-f* = argmax_f U(f, Q)
-subject to R_exec(f) <= B, R_t(f) <= W, for all t.
-```
-
-This formulation emphasizes that compression is not simple sequence shortening. A useful compressed context must retain task-relevant evidence, reasoning cues, executable constraints, and state information needed for reliable multi-step execution.
+| 🧠 **Semantic Compression** | Workflow context tokens accumulated during execution | Redundancy induced by retrieval, reasoning, tool interaction, observations, and memory | Preserve decision-relevant information with fewer active tokens |
 
 ## 🏷️ Tag Legend
 
@@ -639,31 +596,6 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 | [![arXiv](https://img.shields.io/badge/arXiv-2023-B31B1B?style=flat-square)](https://arxiv.org/abs/2303.11366)<br>[Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366)<br><sub>Shinn, Cassano, Berman et al.</sub> | 2023 | ![Memory](https://img.shields.io/badge/Memory-9333ea?style=flat-square) | ![Formation](https://img.shields.io/badge/Formation-f59e0b?style=flat-square) |
 
 </details>
-
----
-
-## 🧭 Discussion
-
-### Application Scenarios
-
-<p align="center"><img src="figs/scenarios.png" alt="Representative application scenarios" width="96%"></p>
-
-- **Human-AI interaction.** Perception compression reduces text, image, video, and audio inputs while preserving user intent and task-relevant information for efficient, potentially real-time interaction.
-- **Human-agent collaboration.** Perception and semantic compression jointly manage retrieval evidence, thought traces, action-observation histories, and memory records so that long-horizon tasks retain executable state.
-- **Multi-agent collaboration.** Semantic compression turns local contexts into compact inter-agent messages, reducing communication overhead while preserving the information required for coordination.
-
-### Challenges and Future Directions
-
-<p align="center"><img src="figs/future_directions.png" alt="Challenges and future directions" width="92%"></p>
-
-| Direction | Summary |
-|---|---|
-| Agent-oriented compression | Move from component-level token reduction to lifecycle-level compression for long-horizon execution. |
-| Multimodal token utility | Model cross-modal token utility across the full active context rather than optimizing each modality in isolation. |
-| Unified evaluation | Establish unified metrics and strong baselines for fair comparison. |
-| Dedicated benchmarks | Evaluate compression on long-horizon agent tasks and dynamic active contexts. |
-| Hardware-friendly design | Advance hardware-oriented compression for real acceleration. |
-| Safety and verification | Preserve critical context, source provenance, tool constraints, and safety-related evidence. |
 
 ---
 
