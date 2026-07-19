@@ -24,9 +24,7 @@ In long-horizon tasks, dense perceptual inputs and repeated retrieval, reasoning
 
 <p align="center"><img src="figs/token_explosion_upload.png" alt="Token Explosion" width="75%"></p>
 
-Token compression addresses this bottleneck by constructing a compact, task-relevant active context. The goal is not merely to shorten a sequence, but to preserve task goals, execution constraints, and state information while reducing computational overhead and contextual distraction.
-
-This repository is built around an open-source paper list. It prioritizes discoverability, a consistent taxonomy, accurate paper and code links, and community-maintained updates rather than reproducing the full survey manuscript.
+Token compression addresses this bottleneck by constructing a compact, task-relevant active context that retains the task goals, execution constraints, and state variables required for downstream inference, thereby reducing memory and latency overhead while limiting attention distraction. Built around an open-source paper list, this repository organizes relevant token compression methods according to the survey taxonomy and emphasizes discoverability, accurate paper and code links, and community-maintained updates rather than reproducing the full manuscript.
 
 ## 📖 Table of Contents
 
