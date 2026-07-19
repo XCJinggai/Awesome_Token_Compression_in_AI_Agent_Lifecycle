@@ -10,10 +10,9 @@
 
 <p align="center">
   <strong>Token Compression in the AI Agent Lifecycle: A Comprehensive Survey from Perceptual Inputs to Semantic Contexts</strong><br>
-  Fengxi Zhang<sup>1,*</sup> · Zhengxue Cheng<sup>1</sup> · Guo Lu<sup>1</sup> · Li Song<sup>1</sup> · Zhu Li<sup>2</sup> · Zhiyong Chen<sup>1</sup> · Meixia Tao<sup>1</sup> · Wenjun Zhang<sup>1</sup><br>
+  Fengxi Zhang<sup>1</sup> · Zhengxue Cheng<sup>1</sup> · Guo Lu<sup>1</sup> · Li Song<sup>1</sup> · Zhu Li<sup>2</sup> · Zhiyong Chen<sup>1</sup> · Meixia Tao<sup>1</sup> · Wenjun Zhang<sup>1</sup><br>
   <sup>1</sup> Shanghai Jiao Tong University, Shanghai, China<br>
   <sup>2</sup> University of Missouri-Kansas City, Kansas City, MO, USA<br>
-  <sup>*</sup> Corresponding author
 </p>
 
 > **📢 Contributions Welcome** — submit a [pull request](https://github.com/XCJinggai/Awesome_Token_Compression_in_AI_Agent_Lifecycle/pulls) to add papers, fix venue/GitHub information, or suggest improvements.
