@@ -7,8 +7,14 @@
 </p>
 
 > This repository provides a collection of papers on token compression methods, organized according to the taxonomy presented in the survey.
-> **"Token Compression in the AI Agent Lifecycle: A Comprehensive Survey from Perceptual Inputs to Semantic Contexts"**
-> by *Fengxi Zhang · Zhengxue Cheng · Guo Lu · Li Song · Zhu Li · Zhiyong Chen · Meixia Tao · Wenjun Zhang*.
+
+<p align="center">
+  <strong>Token Compression in the AI Agent Lifecycle: A Comprehensive Survey from Perceptual Inputs to Semantic Contexts</strong><br>
+  Fengxi Zhang<sup>1,*</sup> · Zhengxue Cheng<sup>1</sup> · Guo Lu<sup>1</sup> · Li Song<sup>1</sup> · Zhu Li<sup>2</sup> · Zhiyong Chen<sup>1</sup> · Meixia Tao<sup>1</sup> · Wenjun Zhang<sup>1</sup><br>
+  <sup>1</sup> Shanghai Jiao Tong University, Shanghai, China<br>
+  <sup>2</sup> University of Missouri-Kansas City, Kansas City, MO, USA<br>
+  <sup>*</sup> Corresponding author
+</p>
 
 > **📢 Contributions Welcome** — submit a [pull request](https://github.com/XCJinggai/Awesome_Token_Compression_in_AI_Agent_Lifecycle/pulls) to add papers, fix venue/GitHub information, or suggest improvements.
 
@@ -16,9 +22,9 @@
 
 ## ✨ Highlights
 
-- **Agent-lifecycle taxonomy.** Organizes token compression methods according to where tokens enter or accumulate during agent execution.
-- **Two complementary classification views.** Groups perception methods by compression mechanism—transformation, selection, aggregation, and resampling—and semantic methods by workflow context—retrieval, thought, action-observation, and memory.
-- **Paper-oriented resource.** Presents publication year, modality or token source, method tags, and available paper and code links in collapsible tables for easier discovery and community updates.
+- **Comprehensive survey.** Reviews token compression across the full AI agent lifecycle, covering perceptual inputs and semantic contexts from retrieval, thought, action-observation, and memory.
+- **Novel problem formulation.** Formulates token compression as active-context optimization that reduces token cost under context-window and computation budgets while preserving task utility.
+- **Unified taxonomy and outlook.** Divides methods into perception compression—transformation, selection, aggregation, and resampling—and semantic compression—retrieval, thought, action-observation, and memory—then discusses future directions in methodology, evaluation, and deployment.
 
 ## 📖 Table of Contents
 
