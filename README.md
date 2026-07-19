@@ -14,21 +14,15 @@
 
 ⭐ If you find this repository useful, please give it a star!
 
-## 💡 Motivation
+## ✨ Highlights
 
-Token sources have expanded with the evolution from LLMs to MLLMs and AI agents. LLMs mainly process textual contexts, MLLMs add dense image, video, and audio inputs, and agents further accumulate retrieved evidence, reasoning traces, action-observation histories, and memory records during multi-step execution.
-
-<p align="center"><img src="figs/teaser.png" alt="Token Sources Expansion" width="62%"></p>
-
-In long-horizon tasks, dense perceptual inputs and repeated retrieval, reasoning, tool use, and environment feedback continuously enlarge the active context. This token explosion increases financial cost, KV-cache memory, and inference latency; excessive context can also distract the model from task-relevant evidence, degrade reasoning, and raise the risk of failure.
-
-<p align="center"><img src="figs/token_explosion_upload.png" alt="Token Explosion" width="75%"></p>
-
-Token compression addresses this bottleneck by constructing a compact, task-relevant active context that retains the task goals, execution constraints, and state variables required for downstream inference, thereby reducing memory and latency overhead while limiting attention distraction. Built around an open-source paper list, this repository organizes relevant token compression methods according to the survey taxonomy and emphasizes discoverability, accurate paper and code links, and community-maintained updates rather than reproducing the full manuscript.
+- **Agent-lifecycle taxonomy.** Organizes token compression methods according to where tokens enter or accumulate during agent execution.
+- **Two complementary classification views.** Groups perception methods by compression mechanism—transformation, selection, aggregation, and resampling—and semantic methods by workflow context—retrieval, thought, action-observation, and memory.
+- **Paper-oriented resource.** Presents publication year, modality or token source, method tags, and available paper and code links in collapsible tables for easier discovery and community updates.
 
 ## 📖 Table of Contents
 
-- [Motivation](#-motivation)
+- [Highlights](#-highlights)
 - [Paper List](#-paper-list)
 - [Tag Legend](#-tag-legend)
 - [Perception Compression](#-perception-compression)
@@ -613,11 +607,11 @@ If you find our paper or this repository helpful, please consider citing:
 
 ## 🙏 Acknowledgements
 
-We thank the authors of the surveyed works and the open-source community members who contribute corrections and new entries.
+This repository is inspired by [Awesome-MLLM-Compression](https://github.com/EIT-NLP/Awesome-MLLM-Compression) and [Awesome-Multimodal-Token-Compression](https://github.com/cokeshao/Awesome-Multimodal-Token-Compression). We thank their maintainers and contributors, as well as the authors of the works collected here.
 
 ## 📬 Contact
 
-For questions, corrections, or paper additions, please [open an issue](https://github.com/XCJinggai/Awesome_Token_Compression_in_AI_Agent_Lifecycle/issues) or contact the maintainer [XCJinggai](https://github.com/XCJinggai).
+For questions, corrections, or paper additions, please [open an issue](https://github.com/XCJinggai/Awesome_Token_Compression_in_AI_Agent_Lifecycle/issues) or contact Fengxi Zhang at [zhangfengxi@sjtu.edu.cn](mailto:zhangfengxi@sjtu.edu.cn).
 
 ---
 
