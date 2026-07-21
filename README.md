@@ -24,7 +24,7 @@
 
 - **Comprehensive survey.** Reviews token compression across the full AI agent lifecycle, covering perceptual inputs and semantic contexts from retrieval, thought, action-observation, and memory.
 - **Novel problem formulation.** Formulates token compression as active-context optimization that reduces token cost under context-window and computation budgets while preserving task utility.
-- **Unified taxonomy and outlook.** Divides methods into perception compression—transformation, selection, aggregation, and resampling—and semantic compression—retrieval, thought, action-observation, and memory—then discusses future directions in methodology, evaluation, and deployment.
+- **How the list is organized.** We group papers by where compression happens in the agent workflow. Perception methods are split by operation: connector-based, summary-based, and cross-modal transformation; saliency-based, redundancy-based, diversity-based, and task-adaptive selection; similarity-based, selection-guided, and task-adaptive aggregation; and latent or query-based resampling. Semantic methods are split by workflow stage: pre- and post-retrieval compression, thought transformation/selection/re-encoding, action-interface and textual/visual observation compression, and memory formation, retrieval, or management.
 
 ## 📖 Table of Contents
 
