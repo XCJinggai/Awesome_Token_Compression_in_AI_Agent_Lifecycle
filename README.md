@@ -77,6 +77,7 @@ The list follows an agent-centric taxonomy based on where tokens enter or accumu
 
 ## 👁️ Perception Compression
 
+Perception compression exploits the intrinsic redundancy of raw perceptual inputs and condense them into compact token representations for efficient inference of foundation models. These perceptual inputs span diverse modalities, including text, images, videos and audio. Since each modality is converted into tokens in a different way, we first describe the corresponding tokenization schemes and redundancy patterns. We then review existing perception token compression methods according to four paradigms: (a) **Transformation**, which directly reduces token length through structural transformations. (b) **Token Selection**, which explicitly retains a subset of high-utility tokens according to a specific criteria. (c) **Token Aggregation**, which merges related tokens into compact representative tokens. (d) **Token Resampling**, which maps the original token sequence into a newly constructed compact token set.
 
 ### ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) Transformation
 
@@ -396,6 +397,7 @@ The list follows an agent-centric taxonomy based on where tokens enter or accumu
 
 ## 🧠 Semantic Compression
 
+In this section, we review token compression methods for the dynamic working context of AI agents. Unlike perception compression, which targets tokens derived from the current input, semantic compression focuses on contextual information produced or introduced during task execution. This working context includes externally acquired information from interaction and retrieval, as well as internally accumulated information from memory and reasoning. These contexts support agentic decision making, but they can also become major sources of context expansion.
 
 ### 🔍 Retrieval Token Compression
 
