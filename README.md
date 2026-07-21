@@ -77,16 +77,13 @@ The list follows an agent-centric taxonomy based on where tokens enter or accumu
 
 ## 👁️ Perception Compression
 
-Perception compression reduces redundant text, image, video, and audio tokens through four mechanisms.
 
 ### ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) Transformation
 
-Transformation shortens existing token representations through structural conversion.
 
 <details open>
 <summary><strong>Connector-based Transformation</strong></summary>
 
-Compresses perceptual features before mapping them into the LLM embedding space.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -132,7 +129,6 @@ Compresses perceptual features before mapping them into the LLM embedding space.
 <details open>
 <summary><strong>Summary-based Transformation</strong></summary>
 
-Rewrites long text into shorter natural-language prompts.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -147,7 +143,6 @@ Rewrites long text into shorter natural-language prompts.
 <details open>
 <summary><strong>Cross-modal Transformation</strong></summary>
 
-Encodes content in another modality with a more compact token interface.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -164,12 +159,10 @@ Encodes content in another modality with a more compact token interface.
 
 ### ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) Token Selection
 
-Token selection keeps high-utility tokens and removes the rest.
 
 <details open>
 <summary><strong>Saliency-based Selection</strong></summary>
 
-Ranks tokens by estimated importance.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -198,7 +191,6 @@ Ranks tokens by estimated importance.
 <details open>
 <summary><strong>Redundancy-based Selection</strong></summary>
 
-Removes tokens already represented by the retained context.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -228,7 +220,6 @@ Removes tokens already represented by the retained context.
 <details open>
 <summary><strong>Diversity-based Selection</strong></summary>
 
-Keeps a compact subset with broad and complementary coverage.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -250,7 +241,6 @@ Keeps a compact subset with broad and complementary coverage.
 <details open>
 <summary><strong>Task-adaptive Selection</strong></summary>
 
-Selects tokens according to the current task or learned policy.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -284,12 +274,10 @@ Selects tokens according to the current task or learned policy.
 
 ### ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) Token Aggregation
 
-Token aggregation merges related tokens into compact representatives.
 
 <details open>
 <summary><strong>Similarity-based Aggregation</strong></summary>
 
-Merges tokens using feature or structural similarity.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -323,7 +311,6 @@ Merges tokens using feature or structural similarity.
 <details open>
 <summary><strong>Selection-guided Aggregation</strong></summary>
 
-Preserves selected tokens and merges the remaining information.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -342,7 +329,6 @@ Preserves selected tokens and merges the remaining information.
 <details open>
 <summary><strong>Task-adaptive Aggregation</strong></summary>
 
-Guides token merging with task or cross-modal signals.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -359,12 +345,10 @@ Guides token merging with task or cross-modal signals.
 
 ### ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) Token Resampling
 
-Token resampling replaces dense inputs with a newly constructed compact token set.
 
 <details open>
 <summary><strong>Latent Resampling</strong></summary>
 
-Encodes dense sequences into compact continuous states.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -388,7 +372,6 @@ Encodes dense sequences into compact continuous states.
 <details open>
 <summary><strong>Query-based Resampling</strong></summary>
 
-Uses learnable queries to read out a compact token set.
 
 | **Paper** | **Date** | **Modality** | **Method** |
 | --- | :---: | :---: | :---: |
@@ -413,11 +396,9 @@ Uses learnable queries to read out a compact token set.
 
 ## 🧠 Semantic Compression
 
-Semantic compression reduces workflow context from retrieval, reasoning, interaction, and memory.
 
 ### 🔍 Retrieval Token Compression
 
-> Compresses external evidence before or after retrieval.
 
 <details open>
 <summary><strong>Post-retrieval Compression</strong></summary>
@@ -464,7 +445,6 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 ### 💭 Thought Token Compression
 
-> Reduces intermediate reasoning tokens while preserving task utility.
 
 <details open>
 <summary><strong>Thought Transformation</strong></summary>
@@ -517,7 +497,6 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 ### 🛠️ Action-Observation Token Compression
 
-> Compresses tool interfaces and runtime observations.
 
 <details open>
 <summary><strong>Action-Interface Token Compression</strong></summary>
@@ -562,7 +541,6 @@ Semantic compression reduces workflow context from retrieval, reasoning, interac
 
 ### 🧩 Memory Token Compression
 
-> Controls how memories are formed, retrieved, and maintained.
 
 <details open>
 <summary><strong>Memory Methods</strong></summary>
