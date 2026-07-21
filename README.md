@@ -62,10 +62,10 @@ The list follows an agent-centric taxonomy based on where tokens enter or accumu
 | ![Image](https://img.shields.io/badge/Image-059669?style=flat-square) | Image modality |
 | ![Video](https://img.shields.io/badge/Video-dc2626?style=flat-square) | Video modality |
 | ![Audio](https://img.shields.io/badge/Audio-d97706?style=flat-square) | Audio modality |
-| ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) | (a) **Transformation**, which directly reduces token length through structural transformations. |
-| ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) | (b) **Token Selection**, which explicitly retains a subset of high-utility tokens according to a specific criteria. |
-| ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) | (c) **Token Aggregation**, which merges related tokens into compact representative tokens. |
-| ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) | (d) **Token Resampling**, which maps the original token sequence into a newly constructed compact token set. |
+| ![Transformation](https://img.shields.io/badge/Transformation-eab308?style=flat-square) | Directly reduces token length through structural transformations. |
+| ![Selection](https://img.shields.io/badge/Selection-ef4444?style=flat-square) | Explicitly retains a subset of high-utility tokens according to a specific criteria. |
+| ![Aggregation](https://img.shields.io/badge/Aggregation-3b82f6?style=flat-square) | Merges related tokens into compact representative tokens. |
+| ![Resampling](https://img.shields.io/badge/Resampling-10b981?style=flat-square) | Maps the original token sequence into a newly constructed compact token set. |
 | ![Retrieval](https://img.shields.io/badge/Retrieval-0891b2?style=flat-square) | Retrieval Evidences |
 | ![Thought](https://img.shields.io/badge/Thought-c2410c?style=flat-square) | Thought traces |
 | ![Action-Observation](https://img.shields.io/badge/Action--Obs-ea580c?style=flat-square) | Action-observation histories |
