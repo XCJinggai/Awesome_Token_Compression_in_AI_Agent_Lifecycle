@@ -47,7 +47,7 @@
 
 ## 📚 Paper List
 
-The list follows an agent-centric taxonomy based on where tokens enter or accumulate during execution. Perception compression covers current text, image, video, and audio inputs. Semantic compression covers workflow contexts introduced or accumulated by retrieval, thought, action-observation, and memory.
+The list follows an agent-centric taxonomy based on where tokens enter or accumulate during execution. Perception compression covers current user-provided text, image, video, and audio inputs. Semantic compression covers workflow contexts introduced or accumulated by retrieval, thought, action-observation, and memory.
 
 | Category | Operates on | Source of Redundancy | Objective |
 |---|---|---|---|
