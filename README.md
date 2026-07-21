@@ -20,12 +20,6 @@
 
 ⭐ If you find this repository useful, please give it a star!
 
-<p align="center">
-  <img src="figs/token_explosion_upload.png" alt="Token Explosion in the AI Agent Lifecycle" width="100%">
-</p>
-
-<p align="center"><em>Token Explosion in the AI Agent Lifecycle. As agents execute long-horizon tasks, dense multimodal perceptual inputs and multi-turn interactions continuously expand the active context, resulting in token explosion. This rapid token growth substantially increases token cost and inference latency. Additionally, excessive context length can degrade task performance and increase the risk of task failure.</em></p>
-
 ## ✨ Highlights
 
 - **Comprehensive Survey:** We provide a comprehensive survey of token compression methods across the AI agent lifecycle. Rather than organizing existing token compression studies around single-input token reduction or isolated AI agent modules, we revisit them according to where tokens arise and how they function in active context during AI agent task execution. This organization covers early token compression methods for compressing single-step perceptual inputs in efficient LLMs and MLLMs, as well as emerging methods for retrieval, thought, action-observation histories, or memory in AI agent systems.
